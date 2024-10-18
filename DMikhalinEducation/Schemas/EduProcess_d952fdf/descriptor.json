@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "dc9b9bd1-b7fe-4d04-a926-ff03cb71f47c",
+    "Name": "EduProcess_d952fdf",
+    "ModifiedOnUtc": "\/Date(1728897018000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Утверждение задачи при изменении состояния",
+    "DependsOn": []
+  }
+}

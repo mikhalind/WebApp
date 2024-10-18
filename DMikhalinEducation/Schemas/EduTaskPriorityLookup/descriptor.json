@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "71de9e9e-9c5b-42b2-bb07-d44a3c0c70af",
+    "Name": "EduTaskPriorityLookup",
+    "ModifiedOnUtc": "\/Date(1728473390000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Приоритет задачи",
+    "DependsOn": []
+  }
+}

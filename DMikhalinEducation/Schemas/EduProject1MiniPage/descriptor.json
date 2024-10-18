@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "a71ffa78-5a28-41c7-a892-ffd064ad6f14",
+    "Name": "EduProject1MiniPage",
+    "ModifiedOnUtc": "\/Date(1728906613000)\/",
+    "Parent": {
+      "UId": "8e06a577-08e4-424e-bd89-798a34e1b928",
+      "Name": "BaseMiniPage"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "EduProject1MiniPage",
+    "DependsOn": []
+  }
+}

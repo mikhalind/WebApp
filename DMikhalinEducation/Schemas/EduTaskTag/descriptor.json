@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "413f907e-6aba-4c51-a2c9-53e82d9ec0af",
+    "Name": "EduTaskTag",
+    "ModifiedOnUtc": "\/Date(1728474729000)\/",
+    "Parent": {
+      "UId": "9e3f203c-e905-4de5-9468-335b193f2439",
+      "Name": "BaseTag"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Тег раздела Задачи",
+    "DependsOn": []
+  }
+}

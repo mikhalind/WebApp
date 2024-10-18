@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "a9c1c456-fc54-4eac-bbb1-e76965de08a3",
+    "Name": "EduTaskInFolder",
+    "ModifiedOnUtc": "\/Date(1728474726000)\/",
+    "Parent": {
+      "UId": "4f63bafb-e9e7-4082-b92e-66b97c14017c",
+      "Name": "BaseItemInFolder"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Задачи в группе",
+    "DependsOn": []
+  }
+}

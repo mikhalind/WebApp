@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "53115cf5-0095-4887-a19c-988c1c87d49c",
+    "Name": "ConstructorHomePage",
+    "ModifiedOnUtc": "\/Date(1728445845000)\/",
+    "Parent": {
+      "UId": "525bf270-0ea5-47ef-af08-c791dc89c8f3",
+      "Name": "ConstructorHomePage"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Домашняя страница",
+    "DependsOn": []
+  }
+}

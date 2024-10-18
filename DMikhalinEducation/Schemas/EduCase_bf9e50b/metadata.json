@@ -1,0 +1,122 @@
+{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "DcmSchemaManager",
+      "UId": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+      "A2": "EduCase_bf9e50b",
+      "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "d845c3d8-d41f-1793-9383-bcd7d710955b",
+      "B8": "1.5.0.902",
+      "FJ1": [],
+      "IJ1": true,
+      "BK8": "51b280eb-d8a3-4932-81b9-ef61a0877aab",
+      "IJ10": true,
+      "EntitySchemaUId": "440e4c35-0c3e-4ff4-bcf0-4b02159bac46",
+      "BK15": [],
+      "BK37": {
+        "BL1": "BPMSoft.Core.Process.ProcessSchemaParameter",
+        "UId": "cdd58be7-2dba-4a5e-869b-1ad5d6d7513a",
+        "A2": "NotificationCaption",
+        "A3": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+        "A4": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+        "L1": "8b3f29bb-ea14-4ce5-a5c5-293a929b6ba2",
+        "L8": {
+          "GS1": 3,
+          "GS2": "[#[PropertyValue:Caption]#]"
+        }
+      },
+      "Stages": [
+        {
+          "BL1": "BPMSoft.Core.DcmProcess.DcmSchemaStage",
+          "UId": "f0a29c23-e159-4057-8e42-3f72de1386c9",
+          "A2": "Stage1",
+          "A3": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+          "A4": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+          "A5": "d845c3d8-d41f-1793-9383-bcd7d710955b",
+          "Color": "#7299F8",
+          "StageRecordId": "8532e0e1-10e7-4ae7-865d-106ce5cdfc15",
+          "Elements": []
+        },
+        {
+          "BL1": "BPMSoft.Core.DcmProcess.DcmSchemaStage",
+          "UId": "3db17880-5bf7-4af4-b7c1-2fbc526c566a",
+          "A2": "Stage2",
+          "A3": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+          "A4": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+          "A5": "d845c3d8-d41f-1793-9383-bcd7d710955b",
+          "Color": "#3CB7B7",
+          "StageRecordId": "cc81d32d-cd17-4542-a460-24b27ec8e4ec",
+          "Elements": []
+        },
+        {
+          "BL1": "BPMSoft.Core.DcmProcess.DcmSchemaStage",
+          "UId": "82b02337-7a57-43bc-8e10-07821ea0c702",
+          "A2": "Stage3",
+          "A3": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+          "A4": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+          "A5": "d845c3d8-d41f-1793-9383-bcd7d710955b",
+          "Color": "#FBD24E",
+          "StageRecordId": "8c3ffbd1-f33c-4b41-bab7-d85abc8e1e42",
+          "Elements": []
+        },
+        {
+          "BL1": "BPMSoft.Core.DcmProcess.DcmSchemaStage",
+          "UId": "437f687c-0904-4452-b184-255d585f479e",
+          "A2": "Stage4",
+          "A3": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+          "A4": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+          "A5": "d845c3d8-d41f-1793-9383-bcd7d710955b",
+          "Color": "#76C224",
+          "StageRecordId": "7564e99c-34ab-417d-aef7-3c478735eb3d",
+          "Elements": []
+        },
+        {
+          "BL1": "BPMSoft.Core.DcmProcess.DcmSchemaStage",
+          "UId": "1fa6850a-4a40-479b-8feb-60c5fa11ccda",
+          "A2": "Stage5",
+          "A3": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+          "A4": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+          "A5": "d845c3d8-d41f-1793-9383-bcd7d710955b",
+          "ParentStageUId": "437f687c-0904-4452-b184-255d585f479e",
+          "Color": "#F9763D",
+          "StageRecordId": "862e24d2-9525-42b3-83ef-84866bfc1557",
+          "Elements": []
+        }
+      ],
+      "Transitions": [],
+      "StageConnections": {
+        "Connections": [
+          {
+            "Source": "82b02337-7a57-43bc-8e10-07821ea0c702",
+            "Target": "1fa6850a-4a40-479b-8feb-60c5fa11ccda"
+          },
+          {
+            "Source": "f0a29c23-e159-4057-8e42-3f72de1386c9",
+            "Target": "1fa6850a-4a40-479b-8feb-60c5fa11ccda"
+          },
+          {
+            "Source": "f0a29c23-e159-4057-8e42-3f72de1386c9",
+            "Target": "3db17880-5bf7-4af4-b7c1-2fbc526c566a"
+          },
+          {
+            "Source": "3db17880-5bf7-4af4-b7c1-2fbc526c566a",
+            "Target": "1fa6850a-4a40-479b-8feb-60c5fa11ccda"
+          },
+          {
+            "Source": "3db17880-5bf7-4af4-b7c1-2fbc526c566a",
+            "Target": "82b02337-7a57-43bc-8e10-07821ea0c702"
+          },
+          {
+            "Source": "82b02337-7a57-43bc-8e10-07821ea0c702",
+            "Target": "437f687c-0904-4452-b184-255d585f479e"
+          }
+        ]
+      },
+      "StageColumnUId": "355c68e2-3c37-43cd-b37e-b5bcf1adffcc",
+      "SystemElements": []
+    }
+  }
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "796078b2-d13f-440b-b564-07da73e6dcfb",
+    "Name": "EduTimeunitResolutionLookup",
+    "ModifiedOnUtc": "\/Date(1728441618000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Единица времени разрешения",
+    "DependsOn": []
+  }
+}

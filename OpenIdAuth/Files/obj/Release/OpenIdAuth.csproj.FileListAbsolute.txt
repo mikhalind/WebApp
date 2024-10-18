@@ -1,0 +1,17 @@
+D:\BPMSoft\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\Bin\OpenIdAuth.dll
+D:\BPMSoft\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\Bin\OpenIdAuth.pdb
+D:\BPMSoft\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.csproj.AssemblyReference.cache
+D:\BPMSoft\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.GeneratedMSBuildEditorConfig.editorconfig
+D:\BPMSoft\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.AssemblyInfoInputs.cache
+D:\BPMSoft\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.AssemblyInfo.cs
+D:\BPMSoft\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.csproj.CoreCompileInputs.cache
+D:\BPMSoft\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.dll
+D:\BPMSoft\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.pdb
+C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\Bin\OpenIdAuth.dll
+C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\Bin\OpenIdAuth.pdb
+C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.csprojAssemblyReference.cache
+C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.csproj.CoreCompileInputs.cache
+C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.AssemblyInfoInputs.cache
+C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.AssemblyInfo.cs
+C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.dll
+C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.pdb

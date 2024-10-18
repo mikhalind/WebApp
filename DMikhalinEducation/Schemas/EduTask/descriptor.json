@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "440e4c35-0c3e-4ff4-bcf0-4b02159bac46",
+    "Name": "EduTask",
+    "ModifiedOnUtc": "\/Date(1728899797000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Задачи",
+    "DependsOn": []
+  }
+}

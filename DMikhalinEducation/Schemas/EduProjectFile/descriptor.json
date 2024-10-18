@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "915d2ce6-15a9-46bb-8b40-b7f9558b483c",
+    "Name": "EduProjectFile",
+    "ModifiedOnUtc": "\/Date(1728442351000)\/",
+    "Parent": {
+      "UId": "556c5867-60a7-4456-aae1-a57a122bef70",
+      "Name": "File"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Файл и ссылка объекта Проекты",
+    "DependsOn": []
+  }
+}

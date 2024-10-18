@@ -1,0 +1,16 @@
+﻿{
+  "Descriptor": {
+    "UId": "d845c3d8-d41f-1793-9383-bcd7d710955b",
+    "Name": "DMikhalinEducation",
+    "BPMSoftVersion": "1.5.0",
+    "ModifiedOnUtc": "\/Date(1728438884000)\/",
+    "Maintainer": "Customer",
+    "DependsOn": [
+      {
+        "UId": "fe1effeb-74f2-42c5-b5e1-dfe0313b86bf",
+        "PackageVersion": "1.0.0",
+        "Name": "Constructor"
+      }
+    ]
+  }
+}

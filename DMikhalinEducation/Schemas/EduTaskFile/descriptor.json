@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "cb3ed090-a329-4e96-82b8-69c5eada662b",
+    "Name": "EduTaskFile",
+    "ModifiedOnUtc": "\/Date(1728474719000)\/",
+    "Parent": {
+      "UId": "556c5867-60a7-4456-aae1-a57a122bef70",
+      "Name": "File"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Файл и ссылка объекта Задачи",
+    "DependsOn": []
+  }
+}

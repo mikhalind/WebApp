@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "b97b1b1c-d3d8-4c7c-9f2a-baf98da0bab0",
+    "Name": "EduProjectFolder",
+    "ModifiedOnUtc": "\/Date(1728442354000)\/",
+    "Parent": {
+      "UId": "d602bf96-d029-4b07-9755-63c8f5cb5ed5",
+      "Name": "BaseFolder"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Группа Проекты",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "4e6e0d0e-9792-41f8-a645-c2ef0bd7f7d9",
+    "Name": "EduServiceInTag",
+    "ModifiedOnUtc": "\/Date(1728442646000)\/",
+    "Parent": {
+      "UId": "5894a2b0-51d5-419a-82bb-238674634270",
+      "Name": "BaseEntityInTag"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Тег в записи раздела Каталог услуг",
+    "DependsOn": []
+  }
+}

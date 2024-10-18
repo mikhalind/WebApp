@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = OpenIdAuth
+build_property.ProjectDir = C:\build\11437\TSBpm\Src\Lib\BPMSoft.WebApp.Loader\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

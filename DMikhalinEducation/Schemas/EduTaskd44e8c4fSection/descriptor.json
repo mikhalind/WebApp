@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "75715f8e-2d68-4990-8964-a8901ac9049f",
+    "Name": "EduTaskd44e8c4fSection",
+    "ModifiedOnUtc": "\/Date(1728474703000)\/",
+    "Parent": {
+      "UId": "7912fb69-4fee-429f-8b23-93943c35d66d",
+      "Name": "BaseSectionV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела: \"Задачи\"",
+    "DependsOn": []
+  }
+}

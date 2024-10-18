@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Проекты" />
+			<Item Name="Columns.EduAccount.Caption" Value="Контрагент" />
+			<Item Name="Columns.EduCost.Caption" Value="Стоимость, руб." />
+			<Item Name="Columns.EduDescription.Caption" Value="Описание" />
+			<Item Name="Columns.EduDueDate.Caption" Value="Дата завершения" />
+			<Item Name="Columns.EduLaborcost.Caption" Value="Трудоемкость" />
+			<Item Name="Columns.EduManager.Caption" Value="Представитель заказчика" />
+			<Item Name="Columns.EduName.Caption" Value="Название" />
+			<Item Name="Columns.EduNotes.Caption" Value="Заметки" />
+			<Item Name="Columns.EduNumber.Caption" Value="Номер" />
+			<Item Name="Columns.EduOwner.Caption" Value="Ответственный" />
+			<Item Name="Columns.EduProjectStatus.Caption" Value="Состояние проекта" />
+			<Item Name="Columns.EduService.Caption" Value="Услуга" />
+			<Item Name="Columns.EduStartDate.Caption" Value="Дата начала" />
+			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
+		</Items>
+	</Group>
+</Resources>

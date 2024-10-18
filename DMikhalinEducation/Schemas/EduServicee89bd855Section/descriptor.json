@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "dfbf19a3-f4ef-4c9d-99e6-6a536437b244",
+    "Name": "EduServicee89bd855Section",
+    "ModifiedOnUtc": "\/Date(1728442624000)\/",
+    "Parent": {
+      "UId": "7912fb69-4fee-429f-8b23-93943c35d66d",
+      "Name": "BaseSectionV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела: \"Каталог услуг\"",
+    "DependsOn": []
+  }
+}

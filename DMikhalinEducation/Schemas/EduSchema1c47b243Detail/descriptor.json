@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "dfacb065-6e9a-4244-a542-2ed5c3a1b231",
+    "Name": "EduSchema1c47b243Detail",
+    "ModifiedOnUtc": "\/Date(1728608540000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема детали: \"Квоты\"",
+    "DependsOn": []
+  }
+}

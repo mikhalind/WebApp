@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "21ffdab7-079d-440e-bdeb-882cf25c6dc4",
+    "Name": "EduCase_bf9e50b",
+    "ModifiedOnUtc": "\/Date(1728612488000)\/",
+    "ManagerName": "DcmSchemaManager",
+    "Caption": "Последовательность стадий задачи",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "a46c9f3b-483b-4d65-b6be-863e668eb6e3",
+    "Name": "EduTaskRatingLookup",
+    "ModifiedOnUtc": "\/Date(1728473729000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Оценка задачи",
+    "DependsOn": []
+  }
+}

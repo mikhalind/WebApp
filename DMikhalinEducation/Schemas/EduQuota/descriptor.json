@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "c5cbe236-5ef0-4ea2-acdf-ac82724b47fe",
+    "Name": "EduQuota",
+    "ModifiedOnUtc": "\/Date(1728608771000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Квоты",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,186 @@
+= MetaData.Schema.UId "d46b4f22-145e-467b-92fc-41e904f658fd"
+= MetaData.Schema.A2 "EduProject"
+= MetaData.Schema.A5 "0837179a-a966-4f43-ae21-7b5d5133b6dc"
+= MetaData.Schema.B6 "d845c3d8-d41f-1793-9383-bcd7d710955b"
+= MetaData.Schema.B8 "1.5.0.902"
+= MetaData.Schema.EG1.UId "a853f758-ca88-4ed7-a6ae-aa31a7d51847"
+= MetaData.Schema.EG1.A2 "EduProjectEventsProcess"
+= MetaData.Schema.EG1.A5 "0837179a-a966-4f43-ae21-7b5d5133b6dc"
+= MetaData.Schema.EG1.B1 []
+= MetaData.Schema.EG1.B3 []
++ MetaData.Schema.EG1.B8 "1.5.0.902"
+= MetaData.Schema.EG1.FJ1 []
+= MetaData.Schema.EG1.BK37.A3 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
+= MetaData.Schema.EG1.BK37.A4 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
+= MetaData.Schema.EG1.BK3 []
+= MetaData.Schema.EG1.BK4 []
++ MetaData.Schema.EG1.Labels []
+= MetaData.Schema.D8 "1bab9dcf-17d5-49f8-9536-8e0064f1dce0"
++ MetaData.Schema.D29 "null"
++ MetaData.Schema.D30 "null"
++ MetaData.Schema.D31 "null"
++ MetaData.Schema.D4 "686648d3-ed96-497c-818e-4eda4f7ff6e5"
++ MetaData.Schema.D2 {
+  "UId": "586667ac-0fc6-4057-aeac-6d2fe30c2bda",
+  "A2": "EduName",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd",
+  "E2": 1,
+  "E5": false
+}
++ MetaData.Schema.D2 {
+  "UId": "af263416-6601-4f8b-be79-5aebfec67aa2",
+  "A2": "EduNotes",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "c0f04627-4620-4bc0-84e5-9419dc8516b1",
+  "E5": false
+}
++ MetaData.Schema.D2 {
+  "UId": "686648d3-ed96-497c-818e-4eda4f7ff6e5",
+  "A2": "EduNumber",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
+}
++ MetaData.Schema.D2 {
+  "UId": "91d3a5eb-e0af-4467-a8ab-ad2dc97e241e",
+  "A2": "EduOwner",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "16be3651-8fe2-4159-8dd0-a803d4683dd3",
+  "E2": 1,
+  "E6": true,
+  "E12": {
+    "FB1": 3,
+    "FB2": "4f367ca9-549b-4a1a-b64e-a40123f52ac0"
+  },
+  "E17": "EduOwnerId",
+  "E18": "EduOwnerName"
+}
++ MetaData.Schema.D2 {
+  "UId": "6c9e2544-260f-40e8-a66e-1e4ad0858523",
+  "A2": "EduAccount",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "25d7c1ab-1de0-4501-b402-02e0e5a72d6e",
+  "E6": true,
+  "E9": true,
+  "E12": {
+    "FB1": 3,
+    "FB2": "c9a1fa4a-0392-4dc0-887c-b6e3d67470b8"
+  },
+  "E17": "EduAccountId",
+  "E18": "EduAccountName"
+}
++ MetaData.Schema.D2 {
+  "UId": "6de8554c-9a7f-486b-8901-1195da57e788",
+  "A2": "EduManager",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "16be3651-8fe2-4159-8dd0-a803d4683dd3",
+  "E2": 1,
+  "E6": true,
+  "E17": "EduManagerId",
+  "E18": "EduManagerName"
+}
++ MetaData.Schema.D2 {
+  "UId": "d8e5807f-b21f-4646-b3f2-416ca672978c",
+  "A2": "EduProjectStatus",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "0c447ae4-74a2-4c5a-9fe8-ace2855376fe",
+  "E2": 1,
+  "E6": true,
+  "E12": {
+    "FB1": 1,
+    "FB2": "42388786-f30d-40e4-8abc-5e508cec0895"
+  },
+  "E17": "EduProjectStatusId",
+  "E18": "EduProjectStatusName"
+}
++ MetaData.Schema.D2 {
+  "UId": "dd6dd17e-7563-4861-8bde-47c825cd664b",
+  "A2": "EduStartDate",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "603d4960-a1a2-45e9-b232-206a54421b01"
+}
++ MetaData.Schema.D2 {
+  "UId": "6bb0d467-af5c-4206-8403-af37f701ea33",
+  "A2": "EduDueDate",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "603d4960-a1a2-45e9-b232-206a54421b01"
+}
++ MetaData.Schema.D2 {
+  "UId": "1a74c087-b2fc-441d-933b-b849e1c9b9f6",
+  "A2": "EduDescription",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "c0f04627-4620-4bc0-84e5-9419dc8516b1"
+}
++ MetaData.Schema.D2 {
+  "UId": "c5a94fab-28f3-42a1-b564-74d164b888e0",
+  "A2": "EduCost",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "969093e2-2b4e-463b-883a-3d3b8c61f0cd"
+}
++ MetaData.Schema.D2 {
+  "UId": "170aa38a-1ba9-458e-891e-0197d3c0e892",
+  "A2": "EduLaborcost",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "6b6b74e2-820d-490e-a017-2b73d4ccf2b0"
+}
++ MetaData.Schema.D2 {
+  "UId": "3831f11d-4820-4da9-bc45-e74d51b9877d",
+  "A2": "EduService",
+  "A3": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A4": "d46b4f22-145e-467b-92fc-41e904f658fd",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "affbfbe8-c9a9-4dfa-9fa1-3c6c67d0d815",
+  "E6": true,
+  "E17": "EduServiceId",
+  "E18": "EduServiceEduName"
+}
+~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","586667ac-0fc6-4057-aeac-6d2fe30c2bda","af263416-6601-4f8b-be79-5aebfec67aa2","686648d3-ed96-497c-818e-4eda4f7ff6e5","91d3a5eb-e0af-4467-a8ab-ad2dc97e241e","6c9e2544-260f-40e8-a66e-1e4ad0858523","6de8554c-9a7f-486b-8901-1195da57e788","d8e5807f-b21f-4646-b3f2-416ca672978c","dd6dd17e-7563-4861-8bde-47c825cd664b","6bb0d467-af5c-4206-8403-af37f701ea33","1a74c087-b2fc-441d-933b-b849e1c9b9f6","c5a94fab-28f3-42a1-b564-74d164b888e0","170aa38a-1ba9-458e-891e-0197d3c0e892","3831f11d-4820-4da9-bc45-e74d51b9877d"]
+= MetaData.Schema.D20.A2 "EduProjectEvents"
+- MetaData.Schema.EG1.B6
+- MetaData.Schema.EG1.BK29
+- MetaData.Schema.EG1.BK30
+- MetaData.Schema.D1
+- MetaData.Schema.D20.A5
+- MetaData.Schema.D20.FA4
+- MetaData.Schema.D20.FA5
+- MetaData.Schema.D20.FA6
+- MetaData.Schema.D20.FA7
+- MetaData.Schema.D20.FA11
+- MetaData.Schema.D20.FA12
+- MetaData.Schema.D20.FA15
++ MetaData.Schema.B7 false
++ MetaData.Schema.D2.["ae0e45ca-c495-4fe7-a39d-3ab7278e1617"].E16 false
++ MetaData.Schema.D2.["e80190a5-03b2-4095-90f7-a193a960adee"].E16 false
++ MetaData.Schema.D2.["ebf6bb93-8aa6-4a01-900d-c6ea67affe21"].E16 false
++ MetaData.Schema.D2.["9928edec-4272-425a-93bb-48743fee4b04"].E16 false
++ MetaData.Schema.D2.["3015559e-cbc6-406a-88af-07f7930be832"].E16 false
++ MetaData.Schema.D2.["3fabd836-6a53-4d8d-9069-6df88d9dae1e"].E16 false

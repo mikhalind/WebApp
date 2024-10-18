@@ -1,0 +1,66 @@
+= MetaData.Schema.UId "cb3ed090-a329-4e96-82b8-69c5eada662b"
+= MetaData.Schema.A2 "EduTaskFile"
+= MetaData.Schema.A5 "0837179a-a966-4f43-ae21-7b5d5133b6dc"
+= MetaData.Schema.B6 "d845c3d8-d41f-1793-9383-bcd7d710955b"
+= MetaData.Schema.B8 "1.5.0.902"
+= MetaData.Schema.EG1.UId "b682e856-eeb1-4a57-b365-ec1b71433c80"
+= MetaData.Schema.EG1.A2 "EduTaskFileEventsProcess"
+= MetaData.Schema.EG1.A5 "0837179a-a966-4f43-ae21-7b5d5133b6dc"
+= MetaData.Schema.EG1.B1 []
+= MetaData.Schema.EG1.B3 []
+= MetaData.Schema.EG1.B8 "1.5.0.902"
+= MetaData.Schema.EG1.FJ1 []
+= MetaData.Schema.EG1.BK8 "bb4d6607-026b-4b27-b640-8f5c77c1e89d"
+= MetaData.Schema.EG1.BK3 []
+= MetaData.Schema.EG1.BK4 []
+= MetaData.Schema.EG1.Labels []
+= MetaData.Schema.EG1.JC1 []
+- MetaData.Schema.D2.["ae0e45ca-c495-4fe7-a39d-3ab7278e1617"].E16
+- MetaData.Schema.D2.["e80190a5-03b2-4095-90f7-a193a960adee"].E16
+- MetaData.Schema.D2.["ebf6bb93-8aa6-4a01-900d-c6ea67affe21"].E16
+- MetaData.Schema.D2.["9928edec-4272-425a-93bb-48743fee4b04"].E16
+- MetaData.Schema.D2.["3015559e-cbc6-406a-88af-07f7930be832"].E16
+- MetaData.Schema.D2.["3fabd836-6a53-4d8d-9069-6df88d9dae1e"].E16
+- MetaData.Schema.D2.["4a35bb09-6c8c-4de8-8773-4e9e3b3cf3b0"].E16
+- MetaData.Schema.D2.["8f7c60c3-7d35-4de4-a234-6e18470eb34c"].E16
+- MetaData.Schema.D2.["6b37344b-b460-44c5-9fd7-a623689bba4c"].E16
+- MetaData.Schema.D2.["f906243b-8d5c-48f0-8220-89d5c9175806"].E16
+- MetaData.Schema.D2.["73c5b07b-3c1a-44fc-953e-f2ce6cbb7420"].E16
+- MetaData.Schema.D2.["6255f70e-45c9-4346-8ee0-8d604459e7d8"].E16
+- MetaData.Schema.D2.["8d8676ce-6974-4157-9a96-841d4499fccb"].E16
+- MetaData.Schema.D2.["5d9d91dd-892d-4652-8da1-e7a53b96ba4a"].E16
++ MetaData.Schema.D2 {
+  "UId": "eef23397-6d85-4ed4-814e-2d040818eac2",
+  "A2": "EduTask",
+  "A3": "cb3ed090-a329-4e96-82b8-69c5eada662b",
+  "A4": "cb3ed090-a329-4e96-82b8-69c5eada662b",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "440e4c35-0c3e-4ff4-bcf0-4b02159bac46",
+  "E2": 1,
+  "E5": false,
+  "E9": true,
+  "E17": "EduTaskId",
+  "E18": "EduTaskEduName"
+}
+~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","4a35bb09-6c8c-4de8-8773-4e9e3b3cf3b0","8f7c60c3-7d35-4de4-a234-6e18470eb34c","6b37344b-b460-44c5-9fd7-a623689bba4c","f906243b-8d5c-48f0-8220-89d5c9175806","73c5b07b-3c1a-44fc-953e-f2ce6cbb7420","6255f70e-45c9-4346-8ee0-8d604459e7d8","8d8676ce-6974-4157-9a96-841d4499fccb","5d9d91dd-892d-4652-8da1-e7a53b96ba4a","1e656a41-011a-ed7e-8903-5fd6e6dabb49","eef23397-6d85-4ed4-814e-2d040818eac2"]
+- MetaData.Schema.EG1.BK29
+- MetaData.Schema.EG1.BK30
+- MetaData.Schema.D20
+- MetaData.Schema.B7
++ MetaData.Schema.B7 false
++ MetaData.Schema.D2.["ae0e45ca-c495-4fe7-a39d-3ab7278e1617"].E16 false
++ MetaData.Schema.D2.["e80190a5-03b2-4095-90f7-a193a960adee"].E16 false
++ MetaData.Schema.D2.["ebf6bb93-8aa6-4a01-900d-c6ea67affe21"].E16 false
++ MetaData.Schema.D2.["9928edec-4272-425a-93bb-48743fee4b04"].E16 false
++ MetaData.Schema.D2.["3015559e-cbc6-406a-88af-07f7930be832"].E16 false
++ MetaData.Schema.D2.["3fabd836-6a53-4d8d-9069-6df88d9dae1e"].E16 false
++ MetaData.Schema.D2.["4a35bb09-6c8c-4de8-8773-4e9e3b3cf3b0"].E16 false
++ MetaData.Schema.D2.["8f7c60c3-7d35-4de4-a234-6e18470eb34c"].E16 false
++ MetaData.Schema.D2.["6b37344b-b460-44c5-9fd7-a623689bba4c"].E16 false
++ MetaData.Schema.D2.["f906243b-8d5c-48f0-8220-89d5c9175806"].E16 false
++ MetaData.Schema.D2.["73c5b07b-3c1a-44fc-953e-f2ce6cbb7420"].E16 false
++ MetaData.Schema.D2.["6255f70e-45c9-4346-8ee0-8d604459e7d8"].E16 false
++ MetaData.Schema.D2.["8d8676ce-6974-4157-9a96-841d4499fccb"].E16 false
++ MetaData.Schema.D2.["5d9d91dd-892d-4652-8da1-e7a53b96ba4a"].E16 false
++ MetaData.Schema.D2.["1e656a41-011a-ed7e-8903-5fd6e6dabb49"].E16 false
