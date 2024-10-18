@@ -4,6 +4,7 @@ define("EduProject1MiniPage", [], function() {
 		attributes: {},
 		modules: /**SCHEMA_MODULES*/{}/**SCHEMA_MODULES*/,
 		details: /**SCHEMA_DETAILS*/{}/**SCHEMA_DETAILS*/,
+		
 		businessRules: /**SCHEMA_BUSINESS_RULES*/{
 			"EduDescription": {
 				"95d1874e-6d28-4fc8-98aa-2f1c1dbb26f5": {
@@ -43,6 +44,43 @@ define("EduProject1MiniPage", [], function() {
 						this.set("EduNumber", response);
 					});
 				}
+			},
+			
+			// установка валидаторов полей
+			setValidationConfig: function() {
+				this.callParent(arguments);
+				// на поле "плановая дата завершения"
+				this.addColumnValidator("EduDueDate", this.dueDateValidator);
+				// на поле "плановая дата начала"
+				this.addColumnValidator("EduStartDate", this.startDateValidator);
+			},
+			
+			// валидатор даты завершения
+			dueDateValidator: function(value) {
+				let invalidMessage = "";
+				const startDate = this.get("EduStartDate");
+				const dueDate = this.get("EduDueDate");
+				if (startDate > dueDate) {
+					invalidMessage = "Дата окончания не может быть раньше начала";
+				}
+				return {
+					invalidMessage: invalidMessage
+				};
+			},
+			
+			// валидатор даты начала
+			startDateValidator: function(value) {
+				let invalidMessage = "";
+				const startDate = this.get("EduStartDate");
+				const nowDate = new Date();
+				startDate.setHours(0,0,0,0);
+				nowDate.setHours(0,0,0,0);
+				if (startDate.getTime() < nowDate.getTime()) {
+					invalidMessage = "Дата начала не может быть раньше текущей";
+				}
+				return {
+					invalidMessage: invalidMessage
+				};
 			}
 		},
 		dataModels: /**SCHEMA_DATA_MODELS*/{}/**SCHEMA_DATA_MODELS*/,
@@ -143,7 +181,7 @@ define("EduProject1MiniPage", [], function() {
 			},
 			{
 				"operation": "insert",
-				"name": "EduServicefab96cda-1bba-4867-b079-aa393ddd26e7",
+				"name": "EduStartDate870f4275-b41b-4feb-9523-a3fe1e510257",
 				"values": {
 					"layout": {
 						"colSpan": 24,
@@ -156,7 +194,7 @@ define("EduProject1MiniPage", [], function() {
 					"visible": {
 						"bindTo": "isAddMode"
 					},
-					"bindTo": "EduService"
+					"bindTo": "EduStartDate"
 				},
 				"parentName": "MiniPage",
 				"propertyName": "items",
@@ -164,11 +202,11 @@ define("EduProject1MiniPage", [], function() {
 			},
 			{
 				"operation": "insert",
-				"name": "EduDescriptionbcd932e6-6d04-4070-96ff-9fb050204044",
+				"name": "EduDueDate7107c6eb-f171-420d-9d9a-dc15d8921935",
 				"values": {
 					"layout": {
 						"colSpan": 24,
-						"rowSpan": 2,
+						"rowSpan": 1,
 						"column": 0,
 						"row": 5,
 						"layoutName": "MiniPage"
@@ -177,9 +215,7 @@ define("EduProject1MiniPage", [], function() {
 					"visible": {
 						"bindTo": "isAddMode"
 					},
-					"bindTo": "EduDescription",
-					"enabled": true,
-					"contentType": 0
+					"bindTo": "EduDueDate"
 				},
 				"parentName": "MiniPage",
 				"propertyName": "items",

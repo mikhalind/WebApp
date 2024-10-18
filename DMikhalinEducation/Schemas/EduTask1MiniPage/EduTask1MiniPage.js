@@ -49,7 +49,7 @@ define("EduTask1MiniPage", [], function() {
 				startDate.setHours(0,0,0,0);
 				nowDate.setHours(0,0,0,0);
 				if (startDate.getTime() < nowDate.getTime()) {
-					invalidMessage = "Дата начала не может быть раньше сегодня";
+					invalidMessage = "Дата начала не может быть раньше текущей";
 				}
 				return {
 					invalidMessage: invalidMessage
