@@ -2,13 +2,12 @@
   "Descriptor": {
     "UId": "23b96c40-b935-4210-9a51-af7cacad0dfd",
     "Name": "EduProject1Page",
-    "ModifiedOnUtc": "\/Date(1729241768000)\/",
+    "ModifiedOnUtc": "\/Date(1729254480000)\/",
     "Parent": {
       "UId": "d62293c0-7f14-44b1-b547-735fb40499cd",
       "Name": "BaseModulePageV2"
     },
     "ManagerName": "ClientUnitSchemaManager",
-    "Caption": "Страница редактирования: \"Проекты\"",
-    "DependsOn": []
+    "Caption": "Страница редактирования: \"Проекты\""
   }
 }

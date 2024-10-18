@@ -2,10 +2,10 @@ define("EduProject1MiniPage", [], function() {
 	return {
 		entitySchemaName: "EduProject",
 		attributes: {},
-		modules: /**SCHEMA_MODULES*/{}/**SCHEMA_MODULES*/,
-		details: /**SCHEMA_DETAILS*/{}/**SCHEMA_DETAILS*/,
+		modules: {},
+		details: {},
 		
-		businessRules: /**SCHEMA_BUSINESS_RULES*/{
+		businessRules: {
 			"EduDescription": {
 				"95d1874e-6d28-4fc8-98aa-2f1c1dbb26f5": {
 					"uId": "95d1874e-6d28-4fc8-98aa-2f1c1dbb26f5",
@@ -33,29 +33,27 @@ define("EduProject1MiniPage", [], function() {
 			}
 		}/**SCHEMA_BUSINESS_RULES*/,
 		methods: {
-			// проставляется автоматический номер проекта
+			// Переопределение базового метода, вызывающегося после инициализации объекта
 			onEntityInitialized: function() {
+				// Вызов родительской реализации метода
 				this.callParent(arguments);
-				// Код проставляется в поле, если создается новый элемент или копия существующего
+				
+				// Заполнение поля Номер инкрементированным значением
 				if (this.isAddMode() || this.isCopyMode()) {
-					// Вызов базового метода, который генерирует номер по ранее заданной маске
 					this.getIncrementCode(function(response) {
-						// Сгенерированный номер присваивается в колонку [EduNumber]
 						this.set("EduNumber", response);
 					});
 				}
 			},
 			
-			// установка валидаторов полей
+			// Установка валидаторов полей
 			setValidationConfig: function() {
 				this.callParent(arguments);
-				// на поле "плановая дата завершения"
-				this.addColumnValidator("EduDueDate", this.dueDateValidator);
-				// на поле "плановая дата начала"
-				this.addColumnValidator("EduStartDate", this.startDateValidator);
+				this.addColumnValidator("EduDueDate", this.dueDateValidator); // На поле "Плановая дата завершения"
+				this.addColumnValidator("EduStartDate", this.startDateValidator); // На поле "Плановая дата начала"
 			},
 			
-			// валидатор даты завершения
+			// Валидатор даты завершения
 			dueDateValidator: function(value) {
 				let invalidMessage = "";
 				const startDate = this.get("EduStartDate");
@@ -68,7 +66,7 @@ define("EduProject1MiniPage", [], function() {
 				};
 			},
 			
-			// валидатор даты начала
+			// Валидатор даты начала
 			startDateValidator: function(value) {
 				let invalidMessage = "";
 				const startDate = this.get("EduStartDate");
@@ -81,10 +79,26 @@ define("EduProject1MiniPage", [], function() {
 				return {
 					invalidMessage: invalidMessage
 				};
+			},
+
+			// Получение инкрементированного номера проекта
+			getIncrementCode: function(callback, scope) {
+				var data = {
+					sysSettingName: this.entitySchemaName + "LastNumber",
+					sysSettingMaskName: this.entitySchemaName + "CodeMask"
+				};
+				var config = {
+					serviceName: "SysSettingsService",
+					methodName: "GetIncrementValueVsMask",
+					data: data
+				};
+				this.callService(config, function(response) {
+					callback.call(this, response.GetIncrementValueVsMaskResult);
+				}, scope || this);
 			}
 		},
-		dataModels: /**SCHEMA_DATA_MODELS*/{}/**SCHEMA_DATA_MODELS*/,
-		diff: /**SCHEMA_DIFF*/[
+		dataModels: {},
+		diff: [
 			{
 				"operation": "merge",
 				"name": "HeaderContainer",
@@ -370,6 +384,6 @@ define("EduProject1MiniPage", [], function() {
 				"propertyName": "items",
 				"index": 12
 			}
-		]/**SCHEMA_DIFF*/
+		]
 	};
 });

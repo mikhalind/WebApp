@@ -1,17 +1,15 @@
 = MetaData.Schema.UId "bae1a6a9-80ed-4e0b-9a21-34acdab7da57"
 = MetaData.Schema.A2 "EduTask1MiniPage"
 = MetaData.Schema.A5 "be59f025-22b2-46dc-9fa1-2f27b60a9f62"
-= MetaData.Schema.B2.["147850c9-2b90-4432-b075-ad078f75ff3b"].A4 "bae1a6a9-80ed-4e0b-9a21-34acdab7da57"
-= MetaData.Schema.B2.["147850c9-2b90-4432-b075-ad078f75ff3b"].A5 "69cade40-6336-4bd8-ae4c-995a74dfddfe"
 = MetaData.Schema.B2.["a054d45a-e826-460c-8478-c4bfc1a08a0d"].A4 "bae1a6a9-80ed-4e0b-9a21-34acdab7da57"
-= MetaData.Schema.B2.["a054d45a-e826-460c-8478-c4bfc1a08a0d"].A5 "69cade40-6336-4bd8-ae4c-995a74dfddfe"
+= MetaData.Schema.B2.["a054d45a-e826-460c-8478-c4bfc1a08a0d"].A5 "0837179a-a966-4f43-ae21-7b5d5133b6dc"
+= MetaData.Schema.B2.["147850c9-2b90-4432-b075-ad078f75ff3b"].A4 "bae1a6a9-80ed-4e0b-9a21-34acdab7da57"
+= MetaData.Schema.B2.["147850c9-2b90-4432-b075-ad078f75ff3b"].A5 "0837179a-a966-4f43-ae21-7b5d5133b6dc"
 = MetaData.Schema.B2.["5fe0512f-ad76-4f3f-bef7-fbf81c5230a9"].A4 "bae1a6a9-80ed-4e0b-9a21-34acdab7da57"
-= MetaData.Schema.B2.["5fe0512f-ad76-4f3f-bef7-fbf81c5230a9"].A5 "051461f6-d3a3-41ff-a6d5-551181c0ec67"
-~ MetaData.Schema.B2 ["147850c9-2b90-4432-b075-ad078f75ff3b","a054d45a-e826-460c-8478-c4bfc1a08a0d","5fe0512f-ad76-4f3f-bef7-fbf81c5230a9"]
+= MetaData.Schema.B2.["5fe0512f-ad76-4f3f-bef7-fbf81c5230a9"].A5 "0837179a-a966-4f43-ae21-7b5d5133b6dc"
 = MetaData.Schema.B6 "d845c3d8-d41f-1793-9383-bcd7d710955b"
 = MetaData.Schema.B8 "1.5.0.902"
 = MetaData.Schema.HD5 []
-+ MetaData.Schema.HD9 "null"
 + MetaData.Schema.HD20 []
 + MetaData.Schema.HD21 []
 - MetaData.Schema.B7
