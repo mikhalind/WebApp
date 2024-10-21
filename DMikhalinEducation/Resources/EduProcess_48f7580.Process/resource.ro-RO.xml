@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ro-RO">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.CreatedBy.Caption" Value="Creat de catre" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.CreatedOn.Caption" Value="Creat in" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduName.Caption" Value="Nume" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduNotes.Caption" Value="Notite" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Id.Caption" Value="Id" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ModifiedBy.Caption" Value="Modificat de catre" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ModifiedOn.Caption" Value="Modificat in" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ProcessListeners.Caption" Value="Procese active" />
+		</Items>
+	</Group>
+</Resources>

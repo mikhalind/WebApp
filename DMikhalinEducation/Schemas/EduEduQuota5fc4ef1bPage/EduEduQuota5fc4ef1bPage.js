@@ -2,12 +2,33 @@ define("EduEduQuota5fc4ef1bPage", [], function() {
 	return {
 		entitySchemaName: "EduQuota",
 		attributes: {},
-		modules: /**SCHEMA_MODULES*/{}/**SCHEMA_MODULES*/,
-		details: /**SCHEMA_DETAILS*/{}/**SCHEMA_DETAILS*/,
-		businessRules: /**SCHEMA_BUSINESS_RULES*/{}/**SCHEMA_BUSINESS_RULES*/,
-		methods: {},
-		dataModels: /**SCHEMA_DATA_MODELS*/{}/**SCHEMA_DATA_MODELS*/,
-		diff: /**SCHEMA_DIFF*/[
+		modules: {},
+		details: {},
+		businessRules: {},
+		
+		methods: {
+			// Установка пользовательских валидаторов
+			setValidationConfig: function() {
+				this.callParent(arguments);
+				this.addColumnValidator("EduValue", this.quotaValueValidator);
+			},
+			
+			// Валидация поля "квота"
+			quotaValueValidator: function(value) {
+				let invalidMessage = "";
+				const val = value || this.get("EduValue");
+				// Если поле выходит за промежутки 0-100, добавлять сообщение об ошибке
+				if (val < 0 || val > 100) {
+					invalidMessage = "Квота должна быть в пределах от 0 до 100";
+				}
+				return {
+					invalidMessage: invalidMessage
+				};
+			}
+		},
+		
+		dataModels: {},
+		diff: [
 			{
 				"operation": "insert",
 				"name": "EduName84bf82a9-d8d4-404c-aacb-22a1f2a60e2d",
@@ -147,6 +168,6 @@ define("EduEduQuota5fc4ef1bPage", [], function() {
 				"propertyName": "items",
 				"index": 2
 			}
-		]/**SCHEMA_DIFF*/
+		]
 	};
 });

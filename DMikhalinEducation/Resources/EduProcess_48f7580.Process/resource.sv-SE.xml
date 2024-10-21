@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="sv-SE">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.CreatedBy.Caption" Value="Skapad av" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.CreatedOn.Caption" Value="Skapad" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduName.Caption" Value="Namn" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduNotes.Caption" Value="Anteckningar" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Id.Caption" Value="ID" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ModifiedBy.Caption" Value="Ändrad av" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ModifiedOn.Caption" Value="Ändrad" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ProcessListeners.Caption" Value="Aktiva processer" />
+		</Items>
+	</Group>
+</Resources>

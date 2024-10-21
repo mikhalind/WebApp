@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="pl-PL">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.CreatedBy.Caption" Value="Utworzone przez" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.CreatedOn.Caption" Value="Utworzone w" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduName.Caption" Value="Nazwa" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduNotes.Caption" Value="Notatki" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Id.Caption" Value="Id" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ModifiedBy.Caption" Value="Zmodyfikowany przez" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ModifiedOn.Caption" Value="Zmodyfikowany w" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ProcessListeners.Caption" Value="Aktywne procesy" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "14c9104d-a474-4b5e-ab5a-06ca34926557",
+    "Name": "EduProjectVisaPageV2",
+    "ModifiedOnUtc": "\/Date(1729502612000)\/",
+    "Parent": {
+      "UId": "66e3a5b3-f004-4335-a4e9-5ba255c8a319",
+      "Name": "VisaPageV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "EduProjectVisaPageV2"
+  }
+}

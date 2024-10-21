@@ -51,8 +51,15 @@ define("EduProject4a1f4532Section", [], function() {
 			
 			// Обработчик события нажатия на кнопку
 			onCancelEventClick: function() {
-				// Публикация сообщения-запроса на отменут текущего проекта
-				this.sandbox.publish("CancelProject", "EduProjectStatus", ["msg1"]);
+				this.showConfirmationDialog("Вы уверены, что хотите отменить проект?", 
+											function(result) {
+												if (result === BPMSoft.MessageBoxButtons.YES.returnCode) {
+        											this.sandbox.publish("CancelProject", "EduProjectStatus", ["msg1"]);
+													this.isProjectNotCanceled();
+													// message
+     											} else { }
+											},
+											["Yes", "No"]);	
 			}
 		},
 		

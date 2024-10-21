@@ -1,0 +1,9 @@
+﻿{
+  "Descriptor": {
+    "UId": "e4e1fef3-ade4-47ba-a2a7-bea2239a778b",
+    "Name": "EduProcess_5c46fd7",
+    "ModifiedOnUtc": "\/Date(1729512338000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Отмена процессов и подпроцессов при снятии проекта"
+  }
+}

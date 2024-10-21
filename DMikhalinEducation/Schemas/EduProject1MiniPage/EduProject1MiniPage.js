@@ -71,6 +71,7 @@ define("EduProject1MiniPage", [], function() {
 				let invalidMessage = "";
 				const startDate = this.get("EduStartDate");
 				const nowDate = new Date();
+				if (!startDate) return { invalidMessage: invalidMessage }
 				startDate.setHours(0,0,0,0);
 				nowDate.setHours(0,0,0,0);
 				if (startDate.getTime() < nowDate.getTime()) {

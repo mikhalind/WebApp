@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ChangeDataUserTask1.Caption" Value="Установка приоритета в низкий" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Фильтры источника данных" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="Объект" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="Если объект соответствует условиям" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="Значения полей" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Caption" Value="Установка приоритета в средний" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.DataSourceFilters.Caption" Value="Фильтры источника данных" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.EntitySchemaUId.Caption" Value="Объект" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.IsMatchConditions.Caption" Value="Если объект соответствует условиям" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask2.Parameters.RecordColumnValues.Caption" Value="Значения полей" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Caption" Value="Установка приоритета в высокий" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.DataSourceFilters.Caption" Value="Фильтры источника данных" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.EntitySchemaUId.Caption" Value="Объект" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.IsMatchConditions.Caption" Value="Если объект соответствует условиям" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask3.Parameters.RecordColumnValues.Caption" Value="Значения полей" />
+			<Item Name="BaseElements.StartSignal1.Caption" Value="Установка стоимости&#xA;0 - 100.000" />
+			<Item Name="BaseElements.StartSignal1.Parameters.RecordId.Caption" Value="Уникальный идентификатор записи" />
+			<Item Name="BaseElements.StartSignal2.Caption" Value="Установка стоимости 100.000 - 500.000" />
+			<Item Name="BaseElements.StartSignal2.Parameters.RecordId.Caption" Value="Уникальный идентификатор записи" />
+			<Item Name="BaseElements.StartSignal4.Caption" Value="Установка стоимости более 500.000" />
+			<Item Name="BaseElements.StartSignal4.Parameters.RecordId.Caption" Value="Уникальный идентификатор записи" />
+			<Item Name="Caption" Value="Установка приоритета по цене" />
+			<Item Name="LaneSets.LaneSet1.Caption" Value="LaneSet 1" />
+			<Item Name="LaneSets.LaneSet1.Lanes.Lane1.Caption" Value="Lane 1" />
+			<Item Name="NotificationCaption.Caption" Value="Заголовок экземпляра процесса" />
+			<Item Name="NotificationCaption.DisplayValue" Value="[#Название процесса#]" />
+		</Items>
+	</Group>
+</Resources>

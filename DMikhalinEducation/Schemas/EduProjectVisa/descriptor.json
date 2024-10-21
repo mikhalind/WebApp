@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "8414efa2-f604-4112-b77d-b605e30403ac",
+    "Name": "EduProjectVisa",
+    "ModifiedOnUtc": "\/Date(1729502628000)\/",
+    "Parent": {
+      "UId": "5fa90d0d-64eb-4f52-8d3d-c51fa6443b66",
+      "Name": "BaseVisa"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Визы в разделе Проекты"
+  }
+}

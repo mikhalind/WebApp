@@ -2,13 +2,12 @@
   "Descriptor": {
     "UId": "719946ba-3593-410b-9adf-f9a4d56a09c2",
     "Name": "EduTask1Page",
-    "ModifiedOnUtc": "\/Date(1728905453000)\/",
+    "ModifiedOnUtc": "\/Date(1729521887000)\/",
     "Parent": {
       "UId": "d62293c0-7f14-44b1-b547-735fb40499cd",
       "Name": "BaseModulePageV2"
     },
     "ManagerName": "ClientUnitSchemaManager",
-    "Caption": "Страница редактирования: \"Задачи\"",
-    "DependsOn": []
+    "Caption": "Страница редактирования: \"Задачи\""
   }
 }

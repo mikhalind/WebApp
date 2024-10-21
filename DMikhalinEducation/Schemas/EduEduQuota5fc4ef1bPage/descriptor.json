@@ -2,13 +2,12 @@
   "Descriptor": {
     "UId": "62641f4a-94ac-42ea-8269-2d94eae3e456",
     "Name": "EduEduQuota5fc4ef1bPage",
-    "ModifiedOnUtc": "\/Date(1728608204000)\/",
+    "ModifiedOnUtc": "\/Date(1729500704000)\/",
     "Parent": {
       "UId": "d3cc497c-f286-4f13-99c1-751c468733c0",
       "Name": "BasePageV2"
     },
     "ManagerName": "ClientUnitSchemaManager",
-    "Caption": "Карточка схемы: \"Квоты\"",
-    "DependsOn": []
+    "Caption": "Карточка схемы: \"Квоты\""
   }
 }

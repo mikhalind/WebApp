@@ -1,4 +1,4 @@
-define("EduTask1Page", [], function() {
+define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtilities) {
 	return {
 		entitySchemaName: "EduTask",
 		attributes: {},
@@ -517,6 +517,19 @@ define("EduTask1Page", [], function() {
 							}
 						}
 					]
+				},
+				"f5ba42eb-d576-4f84-a1da-b8e638b9290c": {
+					"uId": "f5ba42eb-d576-4f84-a1da-b8e638b9290c",
+					"enabled": true,
+					"removed": false,
+					"ruleType": 1,
+					"baseAttributePatch": "EduServiceStatus",
+					"comparisonType": 3,
+					"autoClean": false,
+					"autocomplete": false,
+					"type": 0,
+					"value": "c36d1049-6be2-420d-b5e0-f70a108e9b81",
+					"dataValueType": 10
 				}
 			}
 		}/**SCHEMA_BUSINESS_RULES*/,
@@ -533,6 +546,33 @@ define("EduTask1Page", [], function() {
 						this.set("EduNumber", response);
 					});
 				}
+			},
+			
+			// Проверка статуса задачи: отменен или нет (для кнопки)
+			isProjectNotCanceled: function() {
+                const status = this.get("EduTaskStatus");
+                return Ext.isEmpty(status) || status.value != "d6540d57-2ecf-49e0-948c-305e4de1467f";
+            },
+			
+			// обработка события нажатия на кнопку "отмена проекта"
+			onCancelEventClick: function() {
+				this.showConfirmationDialog("Вы уверены, что хотите отменить задачу?", 
+											function(result) {
+												if (result === BPMSoft.MessageBoxButtons.YES.returnCode) {
+        											this.set("EduTaskStatus", { 
+														value: "d6540d57-2ecf-49e0-948c-305e4de1467f",
+														displayValue: "Отменена" 
+													});
+													this.save();
+													this.isProjectNotCanceled();
+													var args = {
+    													sysProcessName: "EduProcess_2e79dcd",
+    													parameters: { TaskId: this.get("Id") }
+													};
+													ProcessModuleUtilities.executeProcess(args);
+     											} else { }
+											},
+											["Yes", "No"]);                
 			},
 			
 			/// метод добавления пользовательских валидаторов
@@ -603,6 +643,8 @@ define("EduTask1Page", [], function() {
 				let invalidMessage = "";
 				let startDate = this.get("EduFactStartDate");
 				let nowDate = new Date();
+				if (!startDate)
+					return { invalidMessage: invalidMessage };
 				startDate.setHours(0,0,0,0);
 				nowDate.setHours(0,0,0,0);
 			    if (startDate.getTime() < nowDate.getTime()) {
@@ -631,6 +673,24 @@ define("EduTask1Page", [], function() {
 		},
 		dataModels: /**SCHEMA_DATA_MODELS*/{}/**SCHEMA_DATA_MODELS*/,
 		diff: /**SCHEMA_DIFF*/[
+			{
+				"operation": "insert",
+				"name": "CancelTaskButton",
+				"values": {
+					"itemType": 5,
+					"caption": "Отменить задачу",
+					"click": {
+						"bindTo": "onCancelEventClick"
+					},
+					"enabled": {
+						"bindTo": "isTaskNotCanceled"
+					},
+					"style": "default"
+				},
+				"parentName": "LeftContainer",
+				"propertyName": "items",
+				"index": 7
+			},
 			{
 				"operation": "insert",
 				"name": "STRINGed9a5f63-d53b-47b9-ba8f-49e415b04b42",
@@ -732,8 +792,12 @@ define("EduTask1Page", [], function() {
 						"row": 5,
 						"layoutName": "ProfileContainer"
 					},
+					"tip": {
+						"content": "Приоритет выставляется автоматически в зависимости от стоимости (до 100 тыс.руб / 100-500 тыс.руб / от 500 тыс.руб.)",
+						"displayMode": "wide"
+					},
 					"bindTo": "EduPriority",
-					"enabled": true,
+					"enabled": false,
 					"contentType": 3
 				},
 				"parentName": "ProfileContainer",

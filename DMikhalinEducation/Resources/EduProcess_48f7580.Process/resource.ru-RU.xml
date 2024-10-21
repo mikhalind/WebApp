@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.ChangeDataUserTask1.Caption" Value="Отмена задач с выбранным номером проекта" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Фильтры источника данных" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.EntitySchemaUId.Caption" Value="Объект" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="Если объект соответствует условиям" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="Значения полей" />
+			<Item Name="BaseElements.ReadDataUserTask2.Caption" Value="Чтение задач с выбранным номером проекта" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.AggregationColumnName.Caption" Value="Имя колонки для агрегирующей функции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.CanReadUncommitedData.Caption" Value="Выполнять &quot;грязное чтение&quot;" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ConsiderTimeInFilter.DisplayValue" Value="true" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.DataSourceFilters.Caption" Value="Источник данных фильтров" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.EntityColumnMetaPathes.Caption" Value="Перечень колонок для чтения" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.FunctionType.Caption" Value="Тип агрегирующей функции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.IgnoreDisplayValues.Caption" Value="Не читать отображаемые значения колонок Справочников" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.NumberOfRecords.Caption" Value="Количество записей для чтения" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.OrderInfo.Caption" Value="Порядок сортировки колонок" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ReadSomeTopRecords.Caption" Value="Читать первые" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Caption" Value="Коллекция записей" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.CreatedBy.Caption" Value="Создал" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.CreatedOn.Caption" Value="Дата создания" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduAccount.Caption" Value="Контрагент" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduApproved.Caption" Value="Утверждена" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduAuthor.Caption" Value="Автор" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduCost.Caption" Value="Стоимость, руб." />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduDecision.Caption" Value="Решение" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduDescription.Caption" Value="Описание" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduFactDueDate.Caption" Value="Фактическая дата завершения" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduFactStartDate.Caption" Value="Фактическая дата начала" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduName.Caption" Value="Название" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduNotes.Caption" Value="Заметки" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduNumber.Caption" Value="Номер" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduParentTask.Caption" Value="Родительская задача" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduPlannedDueDate.Caption" Value="Плановая дата завершения" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduPlannedStartDate.Caption" Value="Плановая дата начала" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduPriority.Caption" Value="Приоритет" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduProject.Caption" Value="Проект" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduRating.Caption" Value="Оценка" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduService.Caption" Value="Услуга" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduSpecialist.Caption" Value="Специалист" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.EduTaskStatus.Caption" Value="Состояние задачи" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Id.Caption" Value="Id" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ModifiedBy.Caption" Value="Изменил" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ModifiedOn.Caption" Value="Дата изменения" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.ProcessListeners.Caption" Value="Активные процессы" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCount.Caption" Value="Количество записей" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultDateTimeFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntity.Caption" Value="Первый элемент результирующей коллекции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntityCollection.Caption" Value="Результирующая коллекция" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultFloatFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultIntegerFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultRowsCount.Caption" Value="Количество прочитанных записей" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultType.Caption" Value="Тип результата" />
+			<Item Name="BaseElements.StartEvent1.Caption" Value="Вызов со страницы Проектов" />
+			<Item Name="BaseElements.SubProcess4.Caption" Value="Отмена подзадач" />
+			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskCollection.Caption" Value="Коллекция подзадач" />
+			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskCollection.DisplayValue" Value="[#Чтение задач с выбранным номером проекта.Коллекция записей#]" />
+			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskCollection.TaskId.Caption" Value="Идентификатор задачи" />
+			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskCollection.TaskId.DisplayValue" Value="[#Чтение задач с выбранным номером проекта.Коллекция записей:Id#]" />
+			<Item Name="Caption" Value="Каскадная отмена задач проекта" />
+			<Item Name="LaneSets.LaneSet1.Caption" Value="LaneSet 1" />
+			<Item Name="LaneSets.LaneSet1.Lanes.Lane1.Caption" Value="Lane 1" />
+			<Item Name="NotificationCaption.Caption" Value="Заголовок экземпляра процесса" />
+			<Item Name="NotificationCaption.DisplayValue" Value="[#Название процесса#]" />
+			<Item Name="Parameters.ProjectId.Caption" Value="Код проекта" />
+		</Items>
+	</Group>
+</Resources>

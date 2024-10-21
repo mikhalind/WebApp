@@ -1,0 +1,9 @@
+﻿{
+  "Descriptor": {
+    "UId": "8af16d66-ea43-4238-a609-b5ff8c643fab",
+    "Name": "EduProcess_2e79dcd",
+    "ModifiedOnUtc": "\/Date(1729521451000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Отмена подзадач при отмене задачи"
+  }
+}

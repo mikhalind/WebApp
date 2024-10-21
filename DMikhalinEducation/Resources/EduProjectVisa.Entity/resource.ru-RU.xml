@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Визы в разделе Проекты" />
+			<Item Name="Columns.EduProject.Caption" Value="Проекты" />
+			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
+		</Items>
+	</Group>
+</Resources>
