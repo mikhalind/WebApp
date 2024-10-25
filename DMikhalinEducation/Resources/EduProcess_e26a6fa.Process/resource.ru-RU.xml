@@ -10,6 +10,7 @@
 			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.Caption" Value="Если объект соответствует условиям" />
 			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.IsMatchConditions.DisplayValue" Value="true" />
 			<Item Name="BaseElements.ChangeDataUserTask1.Parameters.RecordColumnValues.Caption" Value="Значения полей" />
+			<Item Name="BaseElements.ScriptTask2.Caption" Value="Отправка сообщения" />
 			<Item Name="BaseElements.StartSignal1.Caption" Value="Если оценка негативная" />
 			<Item Name="BaseElements.StartSignal1.Parameters.RecordId.Caption" Value="Уникальный идентификатор записи" />
 			<Item Name="Caption" Value="Возврат в работу при негативной оценке задачи" />

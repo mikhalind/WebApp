@@ -1,7 +1,6 @@
 define("EduProject4a1f4532Section", [], function() {
 	return {
 		entitySchemaName: "EduProject",
-		
 		attributes: {
 			// Атрибут для привязки поля enabled кнопки
 			"StatusAttr": {
@@ -34,6 +33,10 @@ define("EduProject4a1f4532Section", [], function() {
 				// Подписка на получение статуса проекта
 				this.sandbox.subscribe("SendProjectStatus", this.processMessage, this, ["msg1"]);
 			},
+			
+			negativeMessageProcess: function() {
+				debugger;
+			},		
 			
 			// Обработка полученного сообщения со статусом проекта
 			processMessage: function(args) {

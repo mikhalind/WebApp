@@ -25,8 +25,8 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 				direction: BPMSoft.MessageDirectionType.SUBSCRIBE
 			}
 		},
-		modules: {},
-		details: {
+		modules: /**SCHEMA_MODULES*/{}/**SCHEMA_MODULES*/,
+		details: /**SCHEMA_DETAILS*/{
 			"Files": {
 				"schemaName": "FileDetailV2",
 				"entitySchemaName": "EduProjectFile",
@@ -58,9 +58,16 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 					"detailColumn": "EduProject",
 					"masterColumn": "Id"
 				}
+			},
+			"VisaDetailV2fe6fbe45": {
+				"schemaName": "VisaDetailV2",
+				"entitySchemaName": "EduProjectVisa",
+				"filter": {
+					"masterColumn": "Id"
+				}
 			}
-		},
-		businessRules: {
+		}/**SCHEMA_DETAILS*/,
+		businessRules: /**SCHEMA_BUSINESS_RULES*/{
 			"EduManager": {
 				"e6397955-952e-45d5-be1f-caea86678f83": {
 					"uId": "e6397955-952e-45d5-be1f-caea86678f83",
@@ -164,7 +171,7 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 					]
 				}
 			}
-		},
+		}/**SCHEMA_BUSINESS_RULES*/,
 				
 		methods: {
 			// Переопределение базового метода, вызывающегося при инициализации схемы страницы
@@ -310,7 +317,7 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 				};
 			}
 		},
-		dataModels: {},
+		dataModels: /**SCHEMA_DATA_MODELS*/{}/**SCHEMA_DATA_MODELS*/,
 		businessRules: /**SCHEMA_BUSINESS_RULES*/{
 			"EduService": {
 				"c7838b31-cdb4-454b-bcfb-369869e4a2e9": {
@@ -803,6 +810,72 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 				"propertyName": "items",
 				"parentName": "Tab8ec9195cTabLabel",
 				"name": "VisaDetailV2fffe05e8",
+				"values": {
+					"itemType": 2,
+					"markerValue": "added-detail"
+				}
+			},
+			{
+				"operation": "insert",
+				"propertyName": "tabs",
+				"parentName": "Tabs",
+				"name": "Tabbde5b0beTabLabel",
+				"values": {
+					"caption": {
+						"bindTo": "Resources.Strings.TabVisaCaption"
+					},
+					"items": []
+				}
+			},
+			{
+				"operation": "insert",
+				"propertyName": "items",
+				"parentName": "Tabbde5b0beTabLabel",
+				"name": "VisaDetailV20e1d23a8",
+				"values": {
+					"itemType": 2,
+					"markerValue": "added-detail"
+				}
+			},
+			{
+				"operation": "insert",
+				"propertyName": "tabs",
+				"parentName": "Tabs",
+				"name": "Tab4936a5daTabLabel",
+				"values": {
+					"caption": {
+						"bindTo": "Resources.Strings.TabVisaCaption"
+					},
+					"items": []
+				}
+			},
+			{
+				"operation": "insert",
+				"propertyName": "items",
+				"parentName": "Tab4936a5daTabLabel",
+				"name": "VisaDetailV27fd59a13",
+				"values": {
+					"itemType": 2,
+					"markerValue": "added-detail"
+				}
+			},
+			{
+				"operation": "insert",
+				"propertyName": "tabs",
+				"parentName": "Tabs",
+				"name": "Tab93e378b2TabLabel",
+				"values": {
+					"caption": {
+						"bindTo": "Resources.Strings.TabVisaCaption"
+					},
+					"items": []
+				}
+			},
+			{
+				"operation": "insert",
+				"propertyName": "items",
+				"parentName": "Tab93e378b2TabLabel",
+				"name": "VisaDetailV2fe6fbe45",
 				"values": {
 					"itemType": 2,
 					"markerValue": "added-detail"

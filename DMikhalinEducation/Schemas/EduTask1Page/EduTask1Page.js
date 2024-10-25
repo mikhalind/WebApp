@@ -2,6 +2,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 	return {
 		entitySchemaName: "EduTask",
 		attributes: {},
+		messages: {},
 		modules: /**SCHEMA_MODULES*/{}/**SCHEMA_MODULES*/,
 		details: /**SCHEMA_DETAILS*/{
 			"Files": {
@@ -29,7 +30,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				}
 			}
 		}/**SCHEMA_DETAILS*/,
-		businessRules: /**SCHEMA_BUSINESS_RULES*/{
+		businessRules: /**SCHEMA_BUSINESS_RULES*/ {
 			"EduSpecialist": {
 				"52ac72aa-3442-4fa7-97d6-b8f7bf3b5f48": {
 					"uId": "52ac72aa-3442-4fa7-97d6-b8f7bf3b5f48",
@@ -532,8 +533,25 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 					"dataValueType": 10
 				}
 			}
-		}/**SCHEMA_BUSINESS_RULES*/,
+		} /**SCHEMA_BUSINESS_RULES*/,
 		methods: {
+			init: function() {
+				this.callParent(arguments);
+				BPMSoft.ServerChannel.on(BPMSoft.EventName.ON_MESSAGE, this.serverListenerMessage, this);
+			},
+			
+			serverListenerMessage: function(scope, message) {
+  				if (message && message.Header.Sender === "NegativeRateMessage") {
+    				debugger;
+					this.showInformationDialog(message.Body);
+  				}
+			},
+			
+			destroy: function () {
+  				this.callParent(arguments);
+  				BPMSoft.ServerChannel.un(BPMSoft.EventName.ON_MESSAGE, this.serverListenerMessage, this);
+			},
+			
 			/// Переопределение базового метода, срабатывающего после окончания инициализации схемы объекта страницы записи
 			onEntityInitialized: function() {
 				// Вызов родительской реализации метода
@@ -614,7 +632,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				const startDate = this.get("EduFactStartDate");
 				const dueDate = this.get("EduFactDueDate");
 				// Если поле не пустое и введено значение отличное от маски, добавлять сообщение об ошибке
-				if (startDate > dueDate) {
+				if (!Ext.isEmpty(dueDate) && startDate > dueDate) {
 					invalidMessage = "Дата окончания не может быть раньше начала";
 				}
 				return {
@@ -747,23 +765,6 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 			},
 			{
 				"operation": "insert",
-				"name": "EduCostcf729f36-3dec-42cf-a079-8325d72e9458",
-				"values": {
-					"layout": {
-						"colSpan": 24,
-						"rowSpan": 1,
-						"column": 0,
-						"row": 3,
-						"layoutName": "ProfileContainer"
-					},
-					"bindTo": "EduCost"
-				},
-				"parentName": "ProfileContainer",
-				"propertyName": "items",
-				"index": 3
-			},
-			{
-				"operation": "insert",
 				"name": "LOOKUP8140e662-4814-4780-9043-5b76eb66aa80",
 				"values": {
 					"layout": {
@@ -779,7 +780,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				},
 				"parentName": "ProfileContainer",
 				"propertyName": "items",
-				"index": 4
+				"index": 3
 			},
 			{
 				"operation": "insert",
@@ -802,26 +803,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				},
 				"parentName": "ProfileContainer",
 				"propertyName": "items",
-				"index": 5
-			},
-			{
-				"operation": "insert",
-				"name": "LOOKUPa34e49f9-5f6e-4918-9055-44451ba5ceed",
-				"values": {
-					"layout": {
-						"colSpan": 24,
-						"rowSpan": 1,
-						"column": 0,
-						"row": 6,
-						"layoutName": "ProfileContainer"
-					},
-					"bindTo": "EduService",
-					"enabled": true,
-					"contentType": 5
-				},
-				"parentName": "ProfileContainer",
-				"propertyName": "items",
-				"index": 6
+				"index": 4
 			},
 			{
 				"operation": "insert",
@@ -831,7 +813,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 						"colSpan": 24,
 						"rowSpan": 1,
 						"column": 0,
-						"row": 7,
+						"row": 6,
 						"layoutName": "ProfileContainer"
 					},
 					"bindTo": "EduParentTask",
@@ -840,7 +822,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				},
 				"parentName": "ProfileContainer",
 				"propertyName": "items",
-				"index": 7
+				"index": 5
 			},
 			{
 				"operation": "insert",
@@ -885,7 +867,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				"name": "STRING6121dbba-d9c7-423b-b16f-7f5bc34729c7",
 				"values": {
 					"layout": {
-						"colSpan": 11,
+						"colSpan": 24,
 						"rowSpan": 2,
 						"column": 0,
 						"row": 2,
@@ -898,6 +880,40 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				"parentName": "Header",
 				"propertyName": "items",
 				"index": 2
+			},
+			{
+				"operation": "insert",
+				"name": "EduServicebb66e531-8397-4dfc-9066-d8a7fb64b7db",
+				"values": {
+					"layout": {
+						"colSpan": 12,
+						"rowSpan": 1,
+						"column": 12,
+						"row": 0,
+						"layoutName": "Header"
+					},
+					"bindTo": "EduService"
+				},
+				"parentName": "Header",
+				"propertyName": "items",
+				"index": 3
+			},
+			{
+				"operation": "insert",
+				"name": "EduCost5ac8ed17-c64b-4062-aea8-025dd315adcf",
+				"values": {
+					"layout": {
+						"colSpan": 12,
+						"rowSpan": 1,
+						"column": 12,
+						"row": 1,
+						"layoutName": "Header"
+					},
+					"bindTo": "EduCost"
+				},
+				"parentName": "Header",
+				"propertyName": "items",
+				"index": 4
 			},
 			{
 				"operation": "insert",
