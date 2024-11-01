@@ -41,6 +41,12 @@
 			<Item Name="NotificationCaption.DisplayValue" Value="[#Название процесса#]" />
 			<Item Name="Parameters.BPSpecialist.Caption" Value="Специалист" />
 			<Item Name="Parameters.BPSpecialist.DisplayValue" Value="[#Чтение задачи.Первый элемент результирующей коллекции.Специалист#]" />
+			<Item Name="Parameters.BPTaskId.Caption" Value="ID задачи" />
+			<Item Name="Parameters.BPTaskId.DisplayValue" Value="[#Если оценка негативная.Уникальный идентификатор записи#]" />
+			<Item Name="Parameters.BPTaskName.Caption" Value="Название задачи" />
+			<Item Name="Parameters.BPTaskName.DisplayValue" Value="[#Чтение задачи.Первый элемент результирующей коллекции.Название#]" />
+			<Item Name="Parameters.BPTaskNumber.Caption" Value="Номер задачи" />
+			<Item Name="Parameters.BPTaskNumber.DisplayValue" Value="[#Чтение задачи.Первый элемент результирующей коллекции.Номер#]" />
 		</Items>
 	</Group>
 </Resources>

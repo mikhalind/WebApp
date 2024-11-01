@@ -11,6 +11,14 @@ define("EduService1Page", [], function() {
 					"masterColumn": "Id",
 					"detailColumn": "EduService"
 				}
+			},
+			"EduSchemaServiceUsersDetail": {
+				"schemaName": "EduSchemafc468c23Detail",
+				"entitySchemaName": "EduServiceUsers",
+				"filter": {
+					"detailColumn": "EduService",
+					"masterColumn": "Id"
+				}
 			}
 		}/**SCHEMA_DETAILS*/,
 		businessRules: /**SCHEMA_BUSINESS_RULES*/{
@@ -273,6 +281,17 @@ define("EduService1Page", [], function() {
 				"parentName": "NotesControlGroup",
 				"propertyName": "items",
 				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "EduSchemaServiceUsersDetail",
+				"values": {
+					"itemType": 2,
+					"markerValue": "added-detail"
+				},
+				"parentName": "NotesAndFilesTab",
+				"propertyName": "items",
+				"index": 2
 			},
 			{
 				"operation": "merge",

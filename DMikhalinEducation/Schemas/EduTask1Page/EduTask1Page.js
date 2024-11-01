@@ -1,8 +1,36 @@
 define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtilities) {
 	return {
 		entitySchemaName: "EduTask",
-		attributes: {},
-		messages: {},
+		attributes: {
+			// Атрибут для привязки поля enabled кнопки
+			"StatusAttr": {
+        		"dataValueType": this.BPMSoft.DataValueType.BOOLEAN,
+				"type": this.BPMSoft.ViewModelColumnType.VIRTUAL_COLUMN,
+				"value": true
+			},
+			"TaskStatusValue": {
+				"dataValueType": this.BPMSoft.DataValueType.TEXT,
+				"type": this.BPMSoft.ViewModelColumnType.VIRTUAL_COLUMN,
+    			"dependencies": [ {
+        			"columns": [ "EduTaskStatus" ],
+        			"methodName": "updateTaskStatus"
+      			}]
+  			}
+		},
+		// Конфигурационный объект сообщений
+		messages: {		
+			// Сообщение для отправки состояния проекта из страницы в секцию
+			"SendTaskStatus": {
+				mode: BPMSoft.MessageMode.PTP,
+				direction: BPMSoft.MessageDirectionType.PUBLISH
+			},
+			
+			// Сообщение-запрос из секции на отмену проекта
+			"CancelTask": {
+				mode: BPMSoft.MessageMode.PTP,
+				direction: BPMSoft.MessageDirectionType.SUBSCRIBE
+			}
+		},
 		modules: /**SCHEMA_MODULES*/{}/**SCHEMA_MODULES*/,
 		details: /**SCHEMA_DETAILS*/{
 			"Files": {
@@ -537,15 +565,43 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 		methods: {
 			init: function() {
 				this.callParent(arguments);
+				this.sandbox.subscribe("CancelTask", this.processCancelling, this, ["msg1"]);
 				BPMSoft.ServerChannel.on(BPMSoft.EventName.ON_MESSAGE, this.serverListenerMessage, this);
 			},
 			
+			// Метод, вызывающийся при изменении поля EduTaskStatus
+			updateTaskStatus: function() {
+				// Публикация сообщения с актуальным состоянием проекта
+				this.publishSendTaskStatus();
+			},
+			
+			// Обработчик запроса на отмену текущего проекта
+			processCancelling: function() {
+				this.set("EduTaskStatus", 
+						 { value: "862e24d2-9525-42b3-83ef-84866bfc1557",
+	                       displayValue: "Отменена",
+	                	 });
+                this.save();
+			},
+			
+			// Метод, публикующий сообщение с текущим состоянием проекта
+			publishSendTaskStatus: function () {
+				let arg = this.get("EduTaskStatus");
+				this.sandbox.publish("SendTaskStatus", arg, ["msg1"]);
+				console.log("Отправлено состояние задачи");
+				this.isTaskNotCanceled(arg.value);
+			},
+			
+			// Прослушивание серверных сообщений
 			serverListenerMessage: function(scope, message) {
   				if (message && message.Header.Sender === "NegativeRateMessage") {
-    				debugger;
 					let obj = JSON.parse(message.Body);
-					if (obj.Id == this.get("EduSpecialist").value)
-						this.BPMSoft.showInformation(obj.Text);
+					debugger;
+					if (obj.Id == BPMSoft.SysValue.CURRENT_USER_CONTACT.value &&
+					    obj.TaskId == this.get("Id"))
+						this.BPMSoft.showInformation("Задача " + obj.TaskNumber + " (" + obj.TaskName +
+													 ") получила негативную оценку и возвращается в состояние \" В работе \"");
+					
   				}
 			},
 			
@@ -558,6 +614,8 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 			onEntityInitialized: function() {
 				// Вызов родительской реализации метода
 				this.callParent(arguments);
+				// Первичное оповещение раздела о состоянии проекта (для кнопки раздела)
+				this.publishSendTaskStatus();
 				// Код проставляется в поле, если создается новый элемент или копия существующего
 				if (this.isAddMode() || this.isCopyMode()) {
 					// Вызов базового метода, который генерирует номер по ранее заданной маске
@@ -569,9 +627,13 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 			},
 			
 			// Проверка статуса задачи: отменен или нет (для кнопки)
-			isProjectNotCanceled: function() {
-                const status = this.get("EduTaskStatus");
-                return Ext.isEmpty(status) || status.value != "d6540d57-2ecf-49e0-948c-305e4de1467f";
+			// Метод изменения атрибута в зависимости от полученного сообщения
+			isTaskNotCanceled: function(arg) {
+				if (arg == "862e24d2-9525-42b3-83ef-84866bfc1557" || // если отменена
+				    arg == "7564e99c-34ab-417d-aef7-3c478735eb3d") // если завершен
+					this.set("StatusAttr", false);
+				else
+					this.set("StatusAttr", true);
             },
 			
 			// обработка события нажатия на кнопку "отмена проекта"
@@ -580,11 +642,11 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 											function(result) {
 												if (result === BPMSoft.MessageBoxButtons.YES.returnCode) {
         											this.set("EduTaskStatus", { 
-														value: "d6540d57-2ecf-49e0-948c-305e4de1467f",
+														value: "862e24d2-9525-42b3-83ef-84866bfc1557",
 														displayValue: "Отменена" 
 													});
 													this.save();
-													this.isProjectNotCanceled();
+													this.isTaskNotCanceled();
 													var args = {
     													sysProcessName: "EduProcess_2e79dcd",
     													parameters: { TaskId: this.get("Id") }
@@ -703,7 +765,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 						"bindTo": "onCancelEventClick"
 					},
 					"enabled": {
-						"bindTo": "isTaskNotCanceled"
+						"bindTo": "StatusAttr"
 					},
 					"style": "default"
 				},

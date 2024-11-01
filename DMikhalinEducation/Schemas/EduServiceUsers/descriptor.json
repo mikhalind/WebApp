@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "3fa8379b-37a7-4212-a58c-23ced180f5c1",
+    "Name": "EduServiceUsers",
+    "ModifiedOnUtc": "\/Date(1730469998000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Пользователи услуги"
+  }
+}

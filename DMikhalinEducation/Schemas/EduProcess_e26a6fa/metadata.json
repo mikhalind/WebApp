@@ -24,6 +24,45 @@
             "GS5": "55c4f483-3200-4c24-85e4-96c882cd6995"
           },
           "L9": "16be3651-8fe2-4159-8dd0-a803d4683dd3"
+        },
+        {
+          "BL1": "BPMSoft.Core.Process.ProcessSchemaParameter",
+          "UId": "7a949fbe-ad74-4f2d-92ed-2ae18f1f925f",
+          "A2": "BPTaskNumber",
+          "A3": "55c4f483-3200-4c24-85e4-96c882cd6995",
+          "A4": "55c4f483-3200-4c24-85e4-96c882cd6995",
+          "L1": "325a73b8-0f47-44a0-8412-7606f78003ac",
+          "L8": {
+            "GS1": 3,
+            "GS2": "[#[IsOwnerSchema:false].[IsSchema:false].[Element:{8298fa80-6f0f-4a79-9265-c4a203173b49}].[Parameter:{e47da14d-4bd3-4362-9660-7b48399e7821}].[EntityColumn:{187e9e26-aee8-40e4-8385-56a15dba4050}]#]",
+            "GS5": "55c4f483-3200-4c24-85e4-96c882cd6995"
+          }
+        },
+        {
+          "BL1": "BPMSoft.Core.Process.ProcessSchemaParameter",
+          "UId": "986225b2-5956-4941-86ca-bb1dfa495d31",
+          "A2": "BPTaskName",
+          "A3": "55c4f483-3200-4c24-85e4-96c882cd6995",
+          "A4": "55c4f483-3200-4c24-85e4-96c882cd6995",
+          "L1": "5ca35f10-a101-4c67-a96a-383da6afacfc",
+          "L8": {
+            "GS1": 3,
+            "GS2": "[#[IsOwnerSchema:false].[IsSchema:false].[Element:{8298fa80-6f0f-4a79-9265-c4a203173b49}].[Parameter:{e47da14d-4bd3-4362-9660-7b48399e7821}].[EntityColumn:{1b295380-545a-4569-adf0-9f4d44654587}]#]",
+            "GS5": "55c4f483-3200-4c24-85e4-96c882cd6995"
+          }
+        },
+        {
+          "BL1": "BPMSoft.Core.Process.ProcessSchemaParameter",
+          "UId": "029ff316-c206-448f-931e-7c5af59f654a",
+          "A2": "BPTaskId",
+          "A3": "55c4f483-3200-4c24-85e4-96c882cd6995",
+          "A4": "55c4f483-3200-4c24-85e4-96c882cd6995",
+          "L1": "23018567-a13c-4320-8687-fd6f9e3699bd",
+          "L8": {
+            "GS1": 3,
+            "GS2": "[#[IsOwnerSchema:false].[IsSchema:false].[Element:{4504fb15-f193-45e0-82d1-872548828d65}].[Parameter:{8eeee5d4-5906-4a65-97e6-3075fc3351b7}]#]",
+            "GS5": "55c4f483-3200-4c24-85e4-96c882cd6995"
+          }
         }
       ],
       "IJ1": true,
@@ -321,7 +360,11 @@
           "GT3": "c4ca949d-be4e-43e8-8518-8fe105d53e31",
           "GT5": "cc12005f-f434-4a40-b9d0-dc8f81755545",
           "GT4": "cb455b6f-78ff-4b1e-b241-c2bbc0b37e9f",
-          "GT1": {}
+          "GT1": {
+            "GS1": 1,
+            "GS2": "187e9e26-aee8-40e4-8385-56a15dba4050;5611009b-2c98-487c-854b-11960a48f887;1b295380-545a-4569-adf0-9f4d44654587",
+            "GS5": "55c4f483-3200-4c24-85e4-96c882cd6995"
+          }
         },
         {
           "BL1": "BPMSoft.Core.Process.ProcessSchemaMapping",
@@ -575,7 +618,7 @@
           "BO3": true,
           "BP2": [],
           "CL2": "FFFFFFFF",
-          "CH1": "var userConnection = this.Get<UserConnection>(\"UserConnection\");\r\nvar spec = Get<Guid>(\"BPSpecialist\");\r\nvar MessageBody = JsonConvert.SerializeObject(new { Id = spec.ToString(), Text = \"Текст сообщения\" });\r\nBPMSoft.Configuration.MsgChannelUtilities.PostMessage(userConnection, \"NegativeRateMessage\", MessageBody);\r\nreturn true;",
+          "CH1": "var userConnection = this.Get<UserConnection>(\"UserConnection\");\r\nvar spec = Get<Guid>(\"BPSpecialist\");\r\nvar taskId = Get<Guid>(\"BPTaskId\");\r\nvar taskName = Get<String>(\"BPTaskName\");\r\nvar taskNum = Get<String>(\"BPTaskNumber\");\r\nvar MessageBody = JsonConvert.SerializeObject(new { Id = spec.ToString(), TaskNumber = taskNum, TaskName = taskName, TaskId = taskId });\r\nBPMSoft.Configuration.MsgChannelUtilities.PostMessage(userConnection, \"NegativeRateMessage\", MessageBody);\r\nreturn true;",
           "CH2": true
         },
         {
@@ -782,7 +825,11 @@
               "A4": "cb455b6f-78ff-4b1e-b241-c2bbc0b37e9f",
               "IL2": "8298fa80-6f0f-4a79-9265-c4a203173b49",
               "L1": "394e160f-c8e0-46fa-9c0d-75d97e9e9169",
-              "L8": {}
+              "L8": {
+                "GS1": 1,
+                "GS2": "187e9e26-aee8-40e4-8385-56a15dba4050;5611009b-2c98-487c-854b-11960a48f887;1b295380-545a-4569-adf0-9f4d44654587",
+                "GS5": "55c4f483-3200-4c24-85e4-96c882cd6995"
+              }
             },
             {
               "BL1": "BPMSoft.Core.Process.ProcessSchemaParameter",

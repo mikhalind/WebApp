@@ -32,10 +32,6 @@ define("EduProject4a1f4532Section", [], function() {
 				this.callParent(arguments);
 				// Подписка на получение статуса проекта
 				this.sandbox.subscribe("SendProjectStatus", this.processMessage, this, ["msg1"]);
-			},
-			
-			negativeMessageProcess: function() {
-				debugger;
 			},		
 			
 			// Обработка полученного сообщения со статусом проекта

@@ -1,0 +1,9 @@
+﻿{
+  "Descriptor": {
+    "UId": "2b906b14-2d3f-4a33-be70-7425d5d2ace1",
+    "Name": "EduProcess_acc8de9",
+    "ModifiedOnUtc": "\/Date(1730465547000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Перевод задач на стадию \"Согласовано\" (подпроцесс)"
+  }
+}

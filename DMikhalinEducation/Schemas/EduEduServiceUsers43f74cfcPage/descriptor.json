@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "324fc488-c472-4fb1-97d1-5eb728d4fd1a",
+    "Name": "EduEduServiceUsers43f74cfcPage",
+    "ModifiedOnUtc": "\/Date(1730469226000)\/",
+    "Parent": {
+      "UId": "d3cc497c-f286-4f13-99c1-751c468733c0",
+      "Name": "BasePageV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Карточка схемы: \"Пользователи услуги\""
+  }
+}

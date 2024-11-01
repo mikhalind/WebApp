@@ -1,0 +1,9 @@
+﻿{
+  "Descriptor": {
+    "UId": "1d7f29b0-7471-4e5f-a5bc-74b8b1987e03",
+    "Name": "EduProcess_dd34404",
+    "ModifiedOnUtc": "\/Date(1730461642000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Визирование только ответственным при малой стоимости проекта"
+  }
+}

@@ -187,21 +187,40 @@ define("EduProject1Page", [], function() {
 				this.callParent(arguments);
 				// Подписка на сообщение-запрос об отмене текущего проекта
 				this.sandbox.subscribe("CancelProject", this.processCancelling, this, ["msg1"]);
-				// Подписка на уведомления
 				BPMSoft.ServerChannel.on(BPMSoft.EventName.ON_MESSAGE, this.serverListenerMessage, this);
 			},
 			
 			// Прослушивание серверных сообщений
 			serverListenerMessage: function(scope, message) {
-  				if (message && message.Header.Sender === "NegativeRateMessage") {
-  					debugger;
-					let obj = JSON.parse(message); // message.Body
-					if (obj.Id == this.get("EduSpecialist"))
-						this.BPMSoft.showInformation(obj.Text);
+				// Уведомление о том, что задача перешла в состояние "В работе"
+  				if (message && message.Header.Sender === "TaskOnTheGo") {
+					let obj = JSON.parse(message.Body);
+					if (obj.Id == BPMSoft.SysValue.CURRENT_USER_CONTACT.value &&
+					    obj.ProjectId == this.get("Id"))
+						this.BPMSoft.showInformation("Задача " + obj.TaskNumber  + " (" + obj.TaskName +
+													 ") перешла в состояние \" В работе \"");
+					
   				}
+				if (message && message.Header.Sender === "TaskClosedInfo") {
+					let obj = JSON.parse(message.Body);
+					if ((BPMSoft.SysValue.CURRENT_USER_CONTACT.value == obj.OwnId ||
+					    BPMSoft.SysValue.CURRENT_USER_CONTACT.value == obj.AccId) &&
+					    obj.ProjectId == this.get("Id")) {
+						this.BPMSoft.showInformation("Задача " + obj.TaskNumber  + " (" + obj.TaskName +
+													 ") завершена");
+					}
+				}
+				if (message && message.Header.Sender === "ProjectClosedInfo") {
+					let obj = JSON.parse(message.Body);
+					if ((BPMSoft.SysValue.CURRENT_USER_CONTACT.value == obj.OwnId ||
+					    BPMSoft.SysValue.CURRENT_USER_CONTACT.value == obj.AccId) &&
+					    obj.ProjectId == this.get("Id")) {
+						this.BPMSoft.showInformation("Проект " + obj.ProjectNumber  + " (" + obj.ProjectName +
+													 ") завершен");
+					}
+				}
 			},
 			
-			// Отписка от прослушивания уведомлений при уничтожении объекта
 			destroy: function () {
   				this.callParent(arguments);
   				BPMSoft.ServerChannel.un(BPMSoft.EventName.ON_MESSAGE, this.serverListenerMessage, this);
