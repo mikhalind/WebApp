@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "900f29f9-2ae8-4c7f-a713-124b7eb6f2a6",
+    "Name": "EduCase_4932f2a",
+    "ModifiedOnUtc": "\/Date(1730287011000)\/",
+    "Parent": {
+      "UId": "9eba7feb-af7b-4622-b22e-20544b1c5535",
+      "Name": "EduCase_797b116"
+    },
+    "ManagerName": "DcmSchemaManager",
+    "Caption": "Последовательность стадий проекта"
+  }
+}

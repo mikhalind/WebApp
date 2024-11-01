@@ -1,6 +1,7 @@
-define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtilities) {
+define("EduProject1Page", [], function() {
 	return {
 		entitySchemaName: "EduProject",
+		
 		attributes: {
 			// Атрибут, зависящий от поля "Состояние проекта"
 			"ProjectStatusValue": {
@@ -12,6 +13,8 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
       			}]
   			}			
 		},
+			
+		// Конфигурационный объект сообщений
 		messages: {		
 			// Сообщение для отправки состояния проекта из страницы в секцию
 			"SendProjectStatus": {
@@ -25,7 +28,9 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 				direction: BPMSoft.MessageDirectionType.SUBSCRIBE
 			}
 		},
+				
 		modules: /**SCHEMA_MODULES*/{}/**SCHEMA_MODULES*/,
+				
 		details: /**SCHEMA_DETAILS*/{
 			"Files": {
 				"schemaName": "FileDetailV2",
@@ -59,7 +64,7 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 					"masterColumn": "Id"
 				}
 			},
-			"VisaDetailV2fe6fbe45": {
+			"VisaDetailV2c00ca24e": {
 				"schemaName": "VisaDetailV2",
 				"entitySchemaName": "EduProjectVisa",
 				"filter": {
@@ -67,7 +72,8 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 				}
 			}
 		}/**SCHEMA_DETAILS*/,
-		businessRules: /**SCHEMA_BUSINESS_RULES*/{
+		
+		businessRules: /**SCHEMA_BUSINESS_RULES*/ {
 			"EduManager": {
 				"e6397955-952e-45d5-be1f-caea86678f83": {
 					"uId": "e6397955-952e-45d5-be1f-caea86678f83",
@@ -171,7 +177,7 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 					]
 				}
 			}
-		}/**SCHEMA_BUSINESS_RULES*/,
+		} /**SCHEMA_BUSINESS_RULES*/,
 				
 		methods: {
 			// Переопределение базового метода, вызывающегося при инициализации схемы страницы
@@ -181,19 +187,37 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 				this.callParent(arguments);
 				// Подписка на сообщение-запрос об отмене текущего проекта
 				this.sandbox.subscribe("CancelProject", this.processCancelling, this, ["msg1"]);
+				// Подписка на уведомления
+				BPMSoft.ServerChannel.on(BPMSoft.EventName.ON_MESSAGE, this.serverListenerMessage, this);
+			},
+			
+			// Прослушивание серверных сообщений
+			serverListenerMessage: function(scope, message) {
+  				if (message && message.Header.Sender === "NegativeRateMessage") {
+  					debugger;
+					let obj = JSON.parse(message); // message.Body
+					if (obj.Id == this.get("EduSpecialist"))
+						this.BPMSoft.showInformation(obj.Text);
+  				}
+			},
+			
+			// Отписка от прослушивания уведомлений при уничтожении объекта
+			destroy: function () {
+  				this.callParent(arguments);
+  				BPMSoft.ServerChannel.un(BPMSoft.EventName.ON_MESSAGE, this.serverListenerMessage, this);
 			},
 			
 			// Метод, вызывающийся при изменении поля EduProjectStatus
 			updateProjectStatus: function() {
 				// Публикация сообщения с актуальным состоянием проекта
-				this.publishSendProjectStatus();
+				publishSendProjectStatus();
 			},
 			
 			// Обработчик запроса на отмену текущего проекта
 			processCancelling: function() {
 				this.set("EduProjectStatus", 
 						 { value: "ce80ba52-2b99-45ba-b027-5afabd5655bd",
-	                       displayValue: "Отменен"
+	                       displayValue: "Отменен",
 	                	 });
                 this.save();
 			},
@@ -230,30 +254,19 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 			
 			// обработка события нажатия на кнопку "отмена проекта"
 			onCancelEventClick: function() {
-				this.showConfirmationDialog("Вы уверены, что хотите отменить проект?", 
-											function(result) {
-												if (result === BPMSoft.MessageBoxButtons.YES.returnCode) {
-        											this.set("EduProjectStatus", { 
-														value: "ce80ba52-2b99-45ba-b027-5afabd5655bd",
-														displayValue: "Отменен" 
-													});
-													this.save();
-													this.isProjectNotCanceled();
-													var args = {
-    													sysProcessName: "EduProcess_48f7580",
-    													parameters: { ProjectId: this.get("Id") }
-													};
-													ProcessModuleUtilities.executeProcess(args);
-     											} else { }
-											},
-											["Yes", "No"]);                
+				// установка поля "статус проекта" текущей записи в "Отменен"
+				this.set("EduProjectStatus", 
+						 { value: "ce80ba52-2b99-45ba-b027-5afabd5655bd",
+	                       displayValue: "Отменен",
+	                	 });
+                // Сохранение данных текущей записи
+                this.save();
 			},
 			
 			// Метод добавления пользовательских валидаторов
 			setValidationConfig: function() {
 				this.callParent(arguments);
 				this.addColumnValidator("EduCost", this.costValidator);
-				this.addColumnValidator("EduLaborcost", this.laborCostValidator);
 				this.addColumnValidator("EduDueDate", this.dueDateValidator);
 				this.addColumnValidator("EduStartDate", this.startDateValidator);
 			},
@@ -267,18 +280,6 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 				// Если поле не пустое и отрицаиельное, добавлять сообщение об ошибке. */
 				if (!Ext.isEmpty(cost) && cost < 0) {
 					invalidMessage = "Стоимость не может быть отрицательной";
-				}
-				return {
-					invalidMessage: invalidMessage
-				};
-			},
-			
-			// функция проверки неотрицательности трудоемкости
-			laborCostValidator: function(value) {
-				let invalidMessage = "";
-				const cost = value || this.get("EduLaborcost");
-				if (!Ext.isEmpty(cost) && cost <= 0) {
-					invalidMessage = "Величина должна быть положительным числом";
 				}
 				return {
 					invalidMessage: invalidMessage
@@ -306,7 +307,10 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 				let invalidMessage = "";
 				let startDate = this.get("EduStartDate");
 				let nowDate = new Date();
-				if (!startDate) return { invalidMessage: invalidMessage }
+				if (Ext.isEmpty(startDate))
+				{
+					return { invalidMessage: invalidMessage }
+				}
 				startDate.setHours(0,0,0,0);
 				nowDate.setHours(0,0,0,0);
 				if (startDate.getTime() < nowDate.getTime()) {
@@ -316,25 +320,11 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 					invalidMessage: invalidMessage
 				};
 			}
+
 		},
+		
 		dataModels: /**SCHEMA_DATA_MODELS*/{}/**SCHEMA_DATA_MODELS*/,
-		businessRules: /**SCHEMA_BUSINESS_RULES*/{
-			"EduService": {
-				"c7838b31-cdb4-454b-bcfb-369869e4a2e9": {
-					"uId": "c7838b31-cdb4-454b-bcfb-369869e4a2e9",
-					"enabled": true,
-					"removed": false,
-					"ruleType": 1,
-					"baseAttributePatch": "EduServiceStatus",
-					"comparisonType": 3,
-					"autoClean": false,
-					"autocomplete": false,
-					"type": 0,
-					"value": "c36d1049-6be2-420d-b5e0-f70a108e9b81",
-					"dataValueType": 10
-				}
-			}
-		}/**SCHEMA_BUSINESS_RULES*/,
+		
 		diff: /**SCHEMA_DIFF*/[
 			{
 				"operation": "insert",
@@ -580,12 +570,8 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 						"row": 1,
 						"layoutName": "EduProjectTabLaborcoastGridLayout00aac7a9"
 					},
-					"tip": {
-						"content": "Стоимость выставляется автоматически как сумма по задачам",
-						"displayMode": "wide"
-					},
 					"bindTo": "EduCost",
-					"enabled": false
+					"enabled": true
 				},
 				"parentName": "EduProjectTabLaborcoastGridLayout00aac7a9",
 				"propertyName": "items",
@@ -731,155 +717,28 @@ define("EduProject1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtil
 			},
 			{
 				"operation": "insert",
-				"propertyName": "tabs",
-				"parentName": "Tabs",
-				"name": "Tab2bfd6eecTabLabel",
+				"name": "Tab2bb92a6dTabLabel",
 				"values": {
 					"caption": {
 						"bindTo": "Resources.Strings.TabVisaCaption"
 					},
-					"items": []
-				}
+					"items": [],
+					"order": 4
+				},
+				"parentName": "Tabs",
+				"propertyName": "tabs",
+				"index": 5
 			},
 			{
 				"operation": "insert",
-				"propertyName": "items",
-				"parentName": "Tab2bfd6eecTabLabel",
-				"name": "VisaDetailV27b045bea",
+				"name": "VisaDetailV2c00ca24e",
 				"values": {
 					"itemType": 2,
 					"markerValue": "added-detail"
-				}
-			},
-			{
-				"operation": "move",
-				"name": "ESNTab",
-				"parentName": "Tabs",
-				"propertyName": "tabs"
-			},
-			{
-				"operation": "move",
-				"name": "TimelineTab",
-				"parentName": "Tabs",
-				"propertyName": "tabs",
-				"index": 3
-			},
-			{
-				"operation": "insert",
-				"propertyName": "tabs",
-				"parentName": "Tabs",
-				"name": "Tab6dd05991TabLabel",
-				"values": {
-					"caption": {
-						"bindTo": "Resources.Strings.TabVisaCaption"
-					},
-					"items": []
-				}
-			},
-			{
-				"operation": "insert",
+				},
+				"parentName": "Tab2bb92a6dTabLabel",
 				"propertyName": "items",
-				"parentName": "Tab6dd05991TabLabel",
-				"name": "VisaDetailV2f9fee98c",
-				"values": {
-					"itemType": 2,
-					"markerValue": "added-detail"
-				}
-			},
-			{
-				"operation": "merge",
-				"name": "TimelineTab",
-				"values": {
-					"order": 3
-				}
-			},
-			{
-				"operation": "insert",
-				"propertyName": "tabs",
-				"parentName": "Tabs",
-				"name": "Tab8ec9195cTabLabel",
-				"values": {
-					"caption": {
-						"bindTo": "Resources.Strings.TabVisaCaption"
-					},
-					"items": []
-				}
-			},
-			{
-				"operation": "insert",
-				"propertyName": "items",
-				"parentName": "Tab8ec9195cTabLabel",
-				"name": "VisaDetailV2fffe05e8",
-				"values": {
-					"itemType": 2,
-					"markerValue": "added-detail"
-				}
-			},
-			{
-				"operation": "insert",
-				"propertyName": "tabs",
-				"parentName": "Tabs",
-				"name": "Tabbde5b0beTabLabel",
-				"values": {
-					"caption": {
-						"bindTo": "Resources.Strings.TabVisaCaption"
-					},
-					"items": []
-				}
-			},
-			{
-				"operation": "insert",
-				"propertyName": "items",
-				"parentName": "Tabbde5b0beTabLabel",
-				"name": "VisaDetailV20e1d23a8",
-				"values": {
-					"itemType": 2,
-					"markerValue": "added-detail"
-				}
-			},
-			{
-				"operation": "insert",
-				"propertyName": "tabs",
-				"parentName": "Tabs",
-				"name": "Tab4936a5daTabLabel",
-				"values": {
-					"caption": {
-						"bindTo": "Resources.Strings.TabVisaCaption"
-					},
-					"items": []
-				}
-			},
-			{
-				"operation": "insert",
-				"propertyName": "items",
-				"parentName": "Tab4936a5daTabLabel",
-				"name": "VisaDetailV27fd59a13",
-				"values": {
-					"itemType": 2,
-					"markerValue": "added-detail"
-				}
-			},
-			{
-				"operation": "insert",
-				"propertyName": "tabs",
-				"parentName": "Tabs",
-				"name": "Tab93e378b2TabLabel",
-				"values": {
-					"caption": {
-						"bindTo": "Resources.Strings.TabVisaCaption"
-					},
-					"items": []
-				}
-			},
-			{
-				"operation": "insert",
-				"propertyName": "items",
-				"parentName": "Tab93e378b2TabLabel",
-				"name": "VisaDetailV2fe6fbe45",
-				"values": {
-					"itemType": 2,
-					"markerValue": "added-detail"
-				}
+				"index": 0
 			}
 		]/**SCHEMA_DIFF*/
 	};

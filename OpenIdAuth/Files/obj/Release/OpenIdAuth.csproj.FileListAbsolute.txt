@@ -15,3 +15,4 @@ C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configura
 C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.AssemblyInfo.cs
 C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.dll
 C:\Program Files\Constructor_NetFramework_MsSQL\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.pdb
+D:\BPMSoft\BPMSoft.WebApp\BPMSoft.Configuration\Pkg\OpenIdAuth\Files\obj\Release\OpenIdAuth.sourcelink.json

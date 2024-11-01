@@ -575,7 +575,7 @@
           "BO3": true,
           "BP2": [],
           "CL2": "FFFFFFFF",
-          "CH1": "var spec = Get<Guid>(\"BPSpecialist\");\r\nBPMSoft.Configuration.MsgChannelUtilities.PostMessageToAll(\"NegativeRateMessage\", spec.ToString());\r\nreturn true;",
+          "CH1": "var userConnection = this.Get<UserConnection>(\"UserConnection\");\r\nvar spec = Get<Guid>(\"BPSpecialist\");\r\nvar MessageBody = JsonConvert.SerializeObject(new { Id = spec.ToString(), Text = \"Текст сообщения\" });\r\nBPMSoft.Configuration.MsgChannelUtilities.PostMessage(userConnection, \"NegativeRateMessage\", MessageBody);\r\nreturn true;",
           "CH2": true
         },
         {

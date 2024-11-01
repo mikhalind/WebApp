@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.ApprovalSchemaUId.Caption" Value="Approval object" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.ApproverEmailTemplate.Caption" Value="Email template for the approver" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.ApproverType.Caption" Value="Approver type" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.AuthorEmailTemplate.Caption" Value="Email template for the author" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.CurrentApprovalId.Caption" Value="Current Approval Id" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.EmployeeId.Caption" Value="Employee" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.EntitySchemaUId.Caption" Value="Object" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.IgnoreEmailErrors.Caption" Value="Ignore email sending errors" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.IgnoreEmailErrors.DisplayValue" Value="true" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.IsAllowedToDelegate.Caption" Value="Approval may be delegated" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.IsRequiredDigitalSignature.Caption" Value="Digital signature required" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.IsSendEmailToApprovers.Caption" Value="Send email to the approvers" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.IsSendEmailToAuthor.Caption" Value="Send email to the author" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.MasterColumnUId.Caption" Value="Master column" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.Purpose.Caption" Value="Approval purpose" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.RecordId.Caption" Value="Record Id" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.ResultParameter.Caption" Value="Result parameter" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.RoleId.Caption" Value="Role" />
+			<Item Name="Stages.Stage2.Elements.DcmElement1.ProcessFlowElement.Parameters.SectionId.Caption" Value="Section" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.ApprovalSchemaUId.Caption" Value="Approval object" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.ApproverEmailTemplate.Caption" Value="Email template for the approver" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.ApproverType.Caption" Value="Approver type" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.AuthorEmailTemplate.Caption" Value="Email template for the author" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.CurrentApprovalId.Caption" Value="Current Approval Id" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.EmployeeId.Caption" Value="Employee" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.EntitySchemaUId.Caption" Value="Object" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.IgnoreEmailErrors.Caption" Value="Ignore email sending errors" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.IgnoreEmailErrors.DisplayValue" Value="true" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.IsAllowedToDelegate.Caption" Value="Approval may be delegated" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.IsRequiredDigitalSignature.Caption" Value="Digital signature required" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.IsSendEmailToApprovers.Caption" Value="Send email to the approvers" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.IsSendEmailToAuthor.Caption" Value="Send email to the author" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.MasterColumnUId.Caption" Value="Master column" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.Purpose.Caption" Value="Approval purpose" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.RecordId.Caption" Value="Record Id" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.ResultParameter.Caption" Value="Result parameter" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.RoleId.Caption" Value="Role" />
+			<Item Name="Stages.Stage2.Elements.DcmElement2.ProcessFlowElement.Parameters.SectionId.Caption" Value="Section" />
+		</Items>
+	</Group>
+</Resources>

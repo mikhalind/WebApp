@@ -543,7 +543,9 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 			serverListenerMessage: function(scope, message) {
   				if (message && message.Header.Sender === "NegativeRateMessage") {
     				debugger;
-					this.showInformationDialog(message.Body);
+					let obj = JSON.parse(message.Body);
+					if (obj.Id == this.get("EduSpecialist").value)
+						this.BPMSoft.showInformation(obj.Text);
   				}
 			},
 			
@@ -845,6 +847,23 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 			},
 			{
 				"operation": "insert",
+				"name": "EduServicebb66e531-8397-4dfc-9066-d8a7fb64b7db",
+				"values": {
+					"layout": {
+						"colSpan": 12,
+						"rowSpan": 1,
+						"column": 12,
+						"row": 0,
+						"layoutName": "Header"
+					},
+					"bindTo": "EduService"
+				},
+				"parentName": "Header",
+				"propertyName": "items",
+				"index": 1
+			},
+			{
+				"operation": "insert",
 				"name": "LOOKUP7f62dce3-fbd8-4cdb-bf62-70697eec1291",
 				"values": {
 					"layout": {
@@ -860,7 +879,24 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				},
 				"parentName": "Header",
 				"propertyName": "items",
-				"index": 1
+				"index": 2
+			},
+			{
+				"operation": "insert",
+				"name": "EduCost5ac8ed17-c64b-4062-aea8-025dd315adcf",
+				"values": {
+					"layout": {
+						"colSpan": 12,
+						"rowSpan": 1,
+						"column": 12,
+						"row": 1,
+						"layoutName": "Header"
+					},
+					"bindTo": "EduCost"
+				},
+				"parentName": "Header",
+				"propertyName": "items",
+				"index": 3
 			},
 			{
 				"operation": "insert",
@@ -876,40 +912,6 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 					"bindTo": "EduDescription",
 					"enabled": true,
 					"contentType": 0
-				},
-				"parentName": "Header",
-				"propertyName": "items",
-				"index": 2
-			},
-			{
-				"operation": "insert",
-				"name": "EduServicebb66e531-8397-4dfc-9066-d8a7fb64b7db",
-				"values": {
-					"layout": {
-						"colSpan": 12,
-						"rowSpan": 1,
-						"column": 12,
-						"row": 0,
-						"layoutName": "Header"
-					},
-					"bindTo": "EduService"
-				},
-				"parentName": "Header",
-				"propertyName": "items",
-				"index": 3
-			},
-			{
-				"operation": "insert",
-				"name": "EduCost5ac8ed17-c64b-4062-aea8-025dd315adcf",
-				"values": {
-					"layout": {
-						"colSpan": 12,
-						"rowSpan": 1,
-						"column": 12,
-						"row": 1,
-						"layoutName": "Header"
-					},
-					"bindTo": "EduCost"
 				},
 				"parentName": "Header",
 				"propertyName": "items",
@@ -1062,7 +1064,9 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 						"row": 0,
 						"layoutName": "TabLifecycleGridLayout03d1b07c"
 					},
-					"bindTo": "EduRating"
+					"bindTo": "EduRating",
+					"enabled": true,
+					"contentType": 3
 				},
 				"parentName": "TabLifecycleGridLayout03d1b07c",
 				"propertyName": "items",
