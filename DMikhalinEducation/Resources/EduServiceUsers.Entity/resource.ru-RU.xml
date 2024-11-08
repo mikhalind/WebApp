@@ -3,8 +3,8 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Пользователи услуги" />
-			<Item Name="Columns.EduContact.Caption" Value="Пользователь услуги" />
-			<Item Name="Columns.EduService.Caption" Value="Предоставляемая услуга" />
+			<Item Name="Columns.EduService.Caption" Value="Услуга" />
+			<Item Name="Columns.EduUser.Caption" Value="Пользователь услуги" />
 			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
 		</Items>
 	</Group>

@@ -14,7 +14,7 @@ define("EduProject1Page", [], function() {
   			}			
 		},
 			
-		// Конфигурационный объект сообщений
+		/* Конфигурационный объект сообщений */
 		messages: {		
 			// Сообщение для отправки состояния проекта из страницы в секцию
 			"SendProjectStatus": {
@@ -73,7 +73,7 @@ define("EduProject1Page", [], function() {
 			}
 		}/**SCHEMA_DETAILS*/,
 		
-		businessRules: /**SCHEMA_BUSINESS_RULES*/ {
+		businessRules: /**SCHEMA_BUSINESS_RULES*/{
 			"EduManager": {
 				"e6397955-952e-45d5-be1f-caea86678f83": {
 					"uId": "e6397955-952e-45d5-be1f-caea86678f83",
@@ -176,13 +176,95 @@ define("EduProject1Page", [], function() {
 						}
 					]
 				}
+			},
+			"EduService": {
+				"dbb597f1-d5d2-4e69-85b7-a83fe9d4482a": {
+					"uId": "dbb597f1-d5d2-4e69-85b7-a83fe9d4482a",
+					"enabled": true,
+					"removed": false,
+					"ruleType": 1,
+					"baseAttributePatch": "EduServiceStatus",
+					"comparisonType": 3,
+					"autoClean": false,
+					"autocomplete": false,
+					"type": 0,
+					"value": "c36d1049-6be2-420d-b5e0-f70a108e9b81",
+					"dataValueType": 10
+				}
+			},
+			"EduStartDate": {
+				"5f5af27a-65fe-4f80-99c1-559337a3b690": {
+					"uId": "5f5af27a-65fe-4f80-99c1-559337a3b690",
+					"enabled": true,
+					"removed": false,
+					"ruleType": 3,
+					"populatingAttributeSource": {
+						"expression": {
+							"type": 6,
+							"formula": {
+								"type": 2,
+								"dataType": 7,
+								"code": "GETDATE",
+								"arguments": []
+							}
+						}
+					},
+					"logical": 0,
+					"conditions": [
+						{
+							"comparisonType": 3,
+							"leftExpression": {
+								"type": 1,
+								"attribute": "EduProjectStatus"
+							},
+							"rightExpression": {
+								"type": 0,
+								"value": "1cf966d7-5447-41bf-a201-3ecb49d096d6",
+								"dataValueType": 10
+							}
+						}
+					]
+				}
+			},
+			"EduDueDate": {
+				"97950473-7009-466e-9c80-bf0511148bc8": {
+					"uId": "97950473-7009-466e-9c80-bf0511148bc8",
+					"enabled": true,
+					"removed": false,
+					"ruleType": 3,
+					"populatingAttributeSource": {
+						"expression": {
+							"type": 6,
+							"formula": {
+								"type": 2,
+								"dataType": 7,
+								"code": "GETDATE",
+								"arguments": []
+							}
+						}
+					},
+					"logical": 0,
+					"conditions": [
+						{
+							"comparisonType": 3,
+							"leftExpression": {
+								"type": 1,
+								"attribute": "EduProjectStatus"
+							},
+							"rightExpression": {
+								"type": 0,
+								"value": "b5c9c5a5-889e-4629-8a77-258942a4b3c0",
+								"dataValueType": 10
+							}
+						}
+					]
+				}
 			}
-		} /**SCHEMA_BUSINESS_RULES*/,
+		}/**SCHEMA_BUSINESS_RULES*/,
 				
 		methods: {
-			// Переопределение базового метода, вызывающегося при инициализации схемы страницы
+			/* Переопределение базового метода, вызывающегося при инициализации схемы страницы */
 			init: function () {
-				console.log("Страница: инициализация");
 				// Родительская реализация метода
 				this.callParent(arguments);
 				// Подписка на сообщение-запрос об отмене текущего проекта
@@ -190,7 +272,7 @@ define("EduProject1Page", [], function() {
 				BPMSoft.ServerChannel.on(BPMSoft.EventName.ON_MESSAGE, this.serverListenerMessage, this);
 			},
 			
-			// Прослушивание серверных сообщений
+			/* Прослушивание серверных сообщений */
 			serverListenerMessage: function(scope, message) {
 				// Уведомление о том, что задача перешла в состояние "В работе"
   				if (message && message.Header.Sender === "TaskOnTheGo") {
@@ -221,18 +303,19 @@ define("EduProject1Page", [], function() {
 				}
 			},
 			
+			/* Конец прослушивания серверных сообщений при деинициализации объекта */
 			destroy: function () {
   				this.callParent(arguments);
   				BPMSoft.ServerChannel.un(BPMSoft.EventName.ON_MESSAGE, this.serverListenerMessage, this);
 			},
 			
-			// Метод, вызывающийся при изменении поля EduProjectStatus
+			/* Метод, вызывающийся при изменении поля EduProjectStatus */
 			updateProjectStatus: function() {
 				// Публикация сообщения с актуальным состоянием проекта
-				publishSendProjectStatus();
+				this.publishSendProjectStatus();
 			},
 			
-			// Обработчик запроса на отмену текущего проекта
+			/* Обработчик запроса на отмену текущего проекта */
 			processCancelling: function() {
 				this.set("EduProjectStatus", 
 						 { value: "ce80ba52-2b99-45ba-b027-5afabd5655bd",
@@ -241,19 +324,19 @@ define("EduProject1Page", [], function() {
                 this.save();
 			},
 			
-			// Метод, публикующий сообщение с текущим состоянием проекта
+			/* Метод, публикующий сообщение с текущим состоянием проекта */
 			publishSendProjectStatus: function () {
 				let arg = this.get("EduProjectStatus");
 				this.sandbox.publish("SendProjectStatus", arg, ["msg1"]);
 			},
 			
-			// Проверка статуса проекта: отменен или нет (для кнопки)
+			/* Проверка статуса проекта: отменен или нет (для кнопки) */
 			isProjectNotCanceled: function() {
                 const status = this.get("EduProjectStatus");
                 return Ext.isEmpty(status) || status.value != "ce80ba52-2b99-45ba-b027-5afabd5655bd";
             },
 			
-			// Переопределение базового метода, срабатывающего после окончания инициализации схемы объекта страницы записи
+			/* Переопределение базового метода, срабатывающего после окончания инициализации схемы объекта страницы записи */
 			onEntityInitialized: function() {
 				// Вызывается родительская реализация метода
 				this.callParent(arguments);
@@ -271,7 +354,7 @@ define("EduProject1Page", [], function() {
 				}
 			},
 			
-			// обработка события нажатия на кнопку "отмена проекта"
+			/* обработка события нажатия на кнопку "отмена проекта" */
 			onCancelEventClick: function() {
 				// установка поля "статус проекта" текущей записи в "Отменен"
 				this.set("EduProjectStatus", 
@@ -282,7 +365,7 @@ define("EduProject1Page", [], function() {
                 this.save();
 			},
 			
-			// Метод добавления пользовательских валидаторов
+			/* Метод добавления пользовательских валидаторов */
 			setValidationConfig: function() {
 				this.callParent(arguments);
 				this.addColumnValidator("EduCost", this.costValidator);
@@ -290,13 +373,13 @@ define("EduProject1Page", [], function() {
 				this.addColumnValidator("EduStartDate", this.startDateValidator);
 			},
 			
-			// функция проверки неотрицательности введенной суммы
+			/* Функция проверки неотрицательности введенной суммы */
 			costValidator: function(value) {
 				// Переменная для хранения сообщения об ошибке валидации
 				let invalidMessage = "";
 				// Переменная для хранения стоимости проекта */
 				const cost = value || this.get("EduCost");
-				// Если поле не пустое и отрицаиельное, добавлять сообщение об ошибке. */
+				// Если поле не пустое и отрицательное, добавлять сообщение об ошибке. */
 				if (!Ext.isEmpty(cost) && cost < 0) {
 					invalidMessage = "Стоимость не может быть отрицательной";
 				}
@@ -305,7 +388,7 @@ define("EduProject1Page", [], function() {
 				};
 			},
 			
-			// Функция проверки корректности введения дат начала и завершения
+			/* Функция проверки корректности введения дат начала и завершения */
 			dueDateValidator: function(value) {
 				// Переменная для хранения сообщения об ошибке валидации
 				let invalidMessage = "";
@@ -321,7 +404,7 @@ define("EduProject1Page", [], function() {
 				};
 			},
 			
-			// Функция проверки корректности введения даты начала
+			/* Функция проверки корректности введения даты начала */
 			startDateValidator: function(value) {
 				let invalidMessage = "";
 				let startDate = this.get("EduStartDate");
@@ -332,7 +415,8 @@ define("EduProject1Page", [], function() {
 				}
 				startDate.setHours(0,0,0,0);
 				nowDate.setHours(0,0,0,0);
-				if (startDate.getTime() < nowDate.getTime()) {
+				if (startDate.getTime() < nowDate.getTime() && 
+					this.get("EduProjectStatus").value == "42388786-f30d-40e4-8abc-5e508cec0895") {
 					invalidMessage = "Дата начала не может быть раньше текущей даты";
 				}
 				return {
@@ -588,6 +672,10 @@ define("EduProject1Page", [], function() {
 						"column": 0,
 						"row": 1,
 						"layoutName": "EduProjectTabLaborcoastGridLayout00aac7a9"
+					},
+					"tip": {
+						"content": "Стоимость выставляется автоматически как сумма стоимостей задач проекта",
+						"displayMode": "wide"
 					},
 					"bindTo": "EduCost",
 					"enabled": true

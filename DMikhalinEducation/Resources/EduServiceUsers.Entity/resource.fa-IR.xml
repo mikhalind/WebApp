@@ -2,7 +2,7 @@
 <Resources Culture="fa-IR">
 	<Group Type="String">
 		<Items>
-			<Item Name="Columns.EduName.Caption" Value="نام" />
+			<Item Name="Caption" Value="Object" />
 		</Items>
 	</Group>
 </Resources>

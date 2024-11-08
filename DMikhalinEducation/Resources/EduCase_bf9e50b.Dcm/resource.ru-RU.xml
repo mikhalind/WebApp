@@ -10,7 +10,6 @@
 			<Item Name="Stages.Stage3.Caption" Value="В работе" />
 			<Item Name="Stages.Stage4.Caption" Value="Завершена" />
 			<Item Name="Stages.Stage5.Caption" Value="Отменена" />
-			<Item Name="Stages.Stage6.Caption" Value="Согласовано" />
 		</Items>
 	</Group>
 </Resources>

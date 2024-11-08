@@ -1,32 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Program Files\\Constructor_NetFramework_MsSQL\\BPMSoft.WebApp\\BPMSoft.Configuration\\Pkg\\OpenIdAuth\\Files\\OpenIdAuth.csproj": {}
+    "D:\\BPMSoft\\BPMSoft.WebApp\\BPMSoft.Configuration\\Pkg\\OpenIdAuth\\Files\\OpenIdAuth.csproj": {}
   },
   "projects": {
-    "C:\\Program Files\\Constructor_NetFramework_MsSQL\\BPMSoft.WebApp\\BPMSoft.Configuration\\Pkg\\OpenIdAuth\\Files\\OpenIdAuth.csproj": {
+    "D:\\BPMSoft\\BPMSoft.WebApp\\BPMSoft.Configuration\\Pkg\\OpenIdAuth\\Files\\OpenIdAuth.csproj": {
       "version": "1.5.0.902",
       "restore": {
-        "projectUniqueName": "C:\\Program Files\\Constructor_NetFramework_MsSQL\\BPMSoft.WebApp\\BPMSoft.Configuration\\Pkg\\OpenIdAuth\\Files\\OpenIdAuth.csproj",
+        "projectUniqueName": "D:\\BPMSoft\\BPMSoft.WebApp\\BPMSoft.Configuration\\Pkg\\OpenIdAuth\\Files\\OpenIdAuth.csproj",
         "projectName": "OpenIdAuth",
-        "projectPath": "C:\\Program Files\\Constructor_NetFramework_MsSQL\\BPMSoft.WebApp\\BPMSoft.Configuration\\Pkg\\OpenIdAuth\\Files\\OpenIdAuth.csproj",
-        "packagesPath": "C:\\Windows\\TEMP\\1\\DESKTOP-PGGR339_Stagor\\Default\\dotnet\\.nuget\\packages\\",
-        "outputPath": "C:\\Program Files\\Constructor_NetFramework_MsSQL\\BPMSoft.WebApp\\BPMSoft.Configuration\\Pkg\\OpenIdAuth\\Files\\obj\\",
+        "projectPath": "D:\\BPMSoft\\BPMSoft.WebApp\\BPMSoft.Configuration\\Pkg\\OpenIdAuth\\Files\\OpenIdAuth.csproj",
+        "packagesPath": "C:\\Windows\\TEMP\\1\\DMITRY-PC_Dmitry\\Default\\dotnet\\.nuget\\packages\\",
+        "outputPath": "D:\\BPMSoft\\BPMSoft.WebApp\\BPMSoft.Configuration\\Pkg\\OpenIdAuth\\Files\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Windows\\TEMP\\1\\DESKTOP-PGGR339_Stagor\\Default\\dotnet\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Windows\\TEMP\\1\\DMITRY-PC_Dmitry\\Default\\dotnet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net472"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net472": {
+            "targetAlias": "net472",
             "projectReferences": {}
           }
         },
@@ -34,10 +39,18 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net472": {}
+        "net472": {
+          "targetAlias": "net472",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
       }
     }
   }

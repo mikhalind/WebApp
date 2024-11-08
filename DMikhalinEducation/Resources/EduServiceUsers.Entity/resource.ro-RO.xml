@@ -2,7 +2,7 @@
 <Resources Culture="ro-RO">
 	<Group Type="String">
 		<Items>
-			<Item Name="Columns.EduName.Caption" Value="Nume" />
+			<Item Name="Caption" Value="Object" />
 		</Items>
 	</Group>
 </Resources>

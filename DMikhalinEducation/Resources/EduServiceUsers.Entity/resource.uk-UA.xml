@@ -2,7 +2,7 @@
 <Resources Culture="uk-UA">
 	<Group Type="String">
 		<Items>
-			<Item Name="Columns.EduName.Caption" Value="Назва" />
+			<Item Name="Caption" Value="Object" />
 		</Items>
 	</Group>
 </Resources>

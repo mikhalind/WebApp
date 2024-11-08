@@ -1,8 +1,8 @@
 ﻿{
   "Descriptor": {
-    "UId": "3fa8379b-37a7-4212-a58c-23ced180f5c1",
+    "UId": "bbe738a6-dff1-42a5-9dcd-4406e79cb0aa",
     "Name": "EduServiceUsers",
-    "ModifiedOnUtc": "\/Date(1730469998000)\/",
+    "ModifiedOnUtc": "\/Date(1731067682000)\/",
     "Parent": {
       "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
       "Name": "BaseEntity"

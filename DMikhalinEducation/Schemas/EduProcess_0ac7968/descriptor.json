@@ -2,9 +2,8 @@
   "Descriptor": {
     "UId": "dc63d0cc-8a81-4c8c-b8bd-1e32a4106562",
     "Name": "EduProcess_0ac7968",
-    "ModifiedOnUtc": "\/Date(1728897568000)\/",
+    "ModifiedOnUtc": "\/Date(1730976188000)\/",
     "ManagerName": "ProcessSchemaManager",
-    "Caption": "Суммирование стоимости задач",
-    "DependsOn": []
+    "Caption": "Суммирование стоимости задач"
   }
 }

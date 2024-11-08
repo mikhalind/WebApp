@@ -1,4 +1,4 @@
-define("EduTaskd44e8c4fSection", [], function() {
+define("EduTaskd44e8c4fSection", ["ProcessModuleUtilities"], function(ProcessModuleUtilities) {
 	return {
 		entitySchemaName: "EduTask",
 		attributes: {
@@ -7,6 +7,10 @@ define("EduTaskd44e8c4fSection", [], function() {
         		"dataValueType": this.BPMSoft.DataValueType.BOOLEAN,
 				"type": this.BPMSoft.ViewModelColumnType.VIRTUAL_COLUMN,
 				"value": true
+			},
+			"AttrID": {
+        		"dataValueType": this.BPMSoft.DataValueType.GUID,
+				"type": this.BPMSoft.ViewModelColumnType.VIRTUAL_COLUMN
 			}
 		},
 		
@@ -14,6 +18,11 @@ define("EduTaskd44e8c4fSection", [], function() {
 		messages: {
 			// Сообщение для отправки состояния проекта из страницы в секцию
 			"SendTaskStatus": {
+				mode: BPMSoft.MessageMode.PTP,
+				direction: BPMSoft.MessageDirectionType.SUBSCRIBE
+			},
+			
+			"SendTaskID": {
 				mode: BPMSoft.MessageMode.PTP,
 				direction: BPMSoft.MessageDirectionType.SUBSCRIBE
 			},
@@ -45,13 +54,16 @@ define("EduTaskd44e8c4fSection", [], function() {
 				this.callParent(arguments);
 				// Подписка на получение статуса проекта
 				this.sandbox.subscribe("SendTaskStatus", this.processMessage, this, ["msg1"]);
-				console.log("Подписка на получение состояния задачи");
+				this.sandbox.subscribe("SendTaskID", this.processMessageID, this, ["msg1"]);
 			},	
 			
 			// Обработка полученного сообщения со статусом проекта
 			processMessage: function(args) {
-				console.log("Обработка полуенного статуса");
 				this.isTaskNotCanceled(args.value);
+			},
+			
+			processMessageID: function(args) {
+				this.set("AttrID", args);
 			},
 			
 			// Метод изменения атрибута в зависимости от полученного сообщения
@@ -70,6 +82,12 @@ define("EduTaskd44e8c4fSection", [], function() {
 												if (result === BPMSoft.MessageBoxButtons.YES.returnCode) {
         											this.sandbox.publish("CancelTask", "EduTaskStatus", ["msg1"]);
 													this.isTaskNotCanceled();
+													debugger;
+													var args = {
+    													sysProcessName: "EduProcess_2e79dcd",
+    													parameters: { TaskId: this.get("AttrID") }
+													};
+													ProcessModuleUtilities.executeProcess(args);
      											} else { }
 											},
 											["Yes", "No"]);	

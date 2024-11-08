@@ -2,7 +2,7 @@
 <Resources Culture="sv-SE">
 	<Group Type="String">
 		<Items>
-			<Item Name="Columns.EduName.Caption" Value="Namn" />
+			<Item Name="Caption" Value="Object" />
 		</Items>
 	</Group>
 </Resources>

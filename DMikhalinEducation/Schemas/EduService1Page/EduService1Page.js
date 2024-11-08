@@ -12,8 +12,8 @@ define("EduService1Page", [], function() {
 					"detailColumn": "EduService"
 				}
 			},
-			"EduSchemaServiceUsersDetail": {
-				"schemaName": "EduSchemafc468c23Detail",
+			"EduSchemaacd564c9Detail7db6f2d5": {
+				"schemaName": "EduSchemaacd564c9Detail",
 				"entitySchemaName": "EduServiceUsers",
 				"filter": {
 					"detailColumn": "EduService",
@@ -284,7 +284,7 @@ define("EduService1Page", [], function() {
 			},
 			{
 				"operation": "insert",
-				"name": "EduSchemaServiceUsersDetail",
+				"name": "EduSchemaacd564c9Detail7db6f2d5",
 				"values": {
 					"itemType": 2,
 					"markerValue": "added-detail"

@@ -57,12 +57,13 @@
 			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultIntegerFunction.Caption" Value="Результат функции" />
 			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultRowsCount.Caption" Value="Количество прочитанных записей" />
 			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultType.Caption" Value="Тип результата" />
-			<Item Name="BaseElements.StartEvent1.Caption" Value="Вызов со страницы Проектов" />
+			<Item Name="BaseElements.StartSignal1.Caption" Value="Вызов со страницы Проектов" />
+			<Item Name="BaseElements.StartSignal1.Parameters.RecordId.Caption" Value="Уникальный идентификатор записи" />
 			<Item Name="BaseElements.SubProcess4.Caption" Value="Отмена подзадач" />
-			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskCollection.Caption" Value="Коллекция подзадач" />
-			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskCollection.DisplayValue" Value="[#Чтение задач с выбранным номером проекта.Коллекция записей#]" />
-			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskCollection.TaskId.Caption" Value="Идентификатор задачи" />
-			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskCollection.TaskId.DisplayValue" Value="[#Чтение задач с выбранным номером проекта.Коллекция записей:Id#]" />
+			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskIdCollection.Caption" Value="Коллекция ID подзадач" />
+			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskIdCollection.DisplayValue" Value="[#Чтение задач с выбранным номером проекта.Коллекция записей#]" />
+			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskIdCollection.TaskId.Caption" Value="Идентификатор задачи" />
+			<Item Name="BaseElements.SubProcess4.Parameters.SubtaskIdCollection.TaskId.DisplayValue" Value="[#Чтение задач с выбранным номером проекта.Коллекция записей:Id#]" />
 			<Item Name="Caption" Value="Каскадная отмена задач проекта" />
 			<Item Name="LaneSets.LaneSet1.Caption" Value="LaneSet 1" />
 			<Item Name="LaneSets.LaneSet1.Lanes.Lane1.Caption" Value="Lane 1" />

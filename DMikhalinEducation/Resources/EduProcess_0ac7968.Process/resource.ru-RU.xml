@@ -54,6 +54,8 @@
 			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultType.Caption" Value="Тип результата" />
 			<Item Name="BaseElements.StartSignal1.Caption" Value="Изменение стоимости задачи" />
 			<Item Name="BaseElements.StartSignal1.Parameters.RecordId.Caption" Value="Уникальный идентификатор записи" />
+			<Item Name="BaseElements.StartSignal2.Caption" Value="Создание задачи" />
+			<Item Name="BaseElements.StartSignal2.Parameters.RecordId.Caption" Value="Уникальный идентификатор записи" />
 			<Item Name="Caption" Value="Суммирование стоимости задач" />
 			<Item Name="LaneSets.LaneSet1.Caption" Value="LaneSet 1" />
 			<Item Name="LaneSets.LaneSet1.Lanes.Lane1.Caption" Value="Lane 1" />

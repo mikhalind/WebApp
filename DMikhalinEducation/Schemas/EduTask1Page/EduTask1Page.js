@@ -1,8 +1,9 @@
 define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtilities) {
 	return {
 		entitySchemaName: "EduTask",
+		
 		attributes: {
-			// Атрибут для привязки поля enabled кнопки
+			/* Атрибут для привязки поля enabled кнопки */
 			"StatusAttr": {
         		"dataValueType": this.BPMSoft.DataValueType.BOOLEAN,
 				"type": this.BPMSoft.ViewModelColumnType.VIRTUAL_COLUMN,
@@ -17,21 +18,29 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
       			}]
   			}
 		},
-		// Конфигурационный объект сообщений
+		
+		/* Конфигурационный объект сообщений */
 		messages: {		
-			// Сообщение для отправки состояния проекта из страницы в секцию
+			/* Сообщение для отправки состояния проекта из страницы в секцию */
 			"SendTaskStatus": {
 				mode: BPMSoft.MessageMode.PTP,
 				direction: BPMSoft.MessageDirectionType.PUBLISH
 			},
 			
-			// Сообщение-запрос из секции на отмену проекта
+			"SendTaskID": {
+				mode: BPMSoft.MessageMode.PTP,
+				direction: BPMSoft.MessageDirectionType.PUBLISH
+			},
+			
+			/* Сообщение-запрос из секции на отмену проекта */
 			"CancelTask": {
 				mode: BPMSoft.MessageMode.PTP,
 				direction: BPMSoft.MessageDirectionType.SUBSCRIBE
 			}
 		},
+		
 		modules: /**SCHEMA_MODULES*/{}/**SCHEMA_MODULES*/,
+		
 		details: /**SCHEMA_DETAILS*/{
 			"Files": {
 				"schemaName": "FileDetailV2",
@@ -58,6 +67,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				}
 			}
 		}/**SCHEMA_DETAILS*/,
+		
 		businessRules: /**SCHEMA_BUSINESS_RULES*/ {
 			"EduSpecialist": {
 				"52ac72aa-3442-4fa7-97d6-b8f7bf3b5f48": {
@@ -562,20 +572,24 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				}
 			}
 		} /**SCHEMA_BUSINESS_RULES*/,
+		
 		methods: {
+			/* Функция инициализации страницы  */
 			init: function() {
 				this.callParent(arguments);
+				// Подписка на сообщения для отмены задачи
 				this.sandbox.subscribe("CancelTask", this.processCancelling, this, ["msg1"]);
+				// Подписка на серверные сообщения
 				BPMSoft.ServerChannel.on(BPMSoft.EventName.ON_MESSAGE, this.serverListenerMessage, this);
 			},
 			
-			// Метод, вызывающийся при изменении поля EduTaskStatus
+			/* Метод, вызывающийся при изменении поля EduTaskStatus */
 			updateTaskStatus: function() {
 				// Публикация сообщения с актуальным состоянием проекта
 				this.publishSendTaskStatus();
 			},
 			
-			// Обработчик запроса на отмену текущего проекта
+			/* Обработчик запроса на отмену текущего проекта */
 			processCancelling: function() {
 				this.set("EduTaskStatus", 
 						 { value: "862e24d2-9525-42b3-83ef-84866bfc1557",
@@ -584,19 +598,20 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
                 this.save();
 			},
 			
-			// Метод, публикующий сообщение с текущим состоянием проекта
+			/* Метод, публикующий сообщение с текущим состоянием проекта */
 			publishSendTaskStatus: function () {
 				let arg = this.get("EduTaskStatus");
-				this.sandbox.publish("SendTaskStatus", arg, ["msg1"]);
-				console.log("Отправлено состояние задачи");
+				this.sandbox.publish("SendTaskStatus", arg, ["msg1"]);				
 				this.isTaskNotCanceled(arg.value);
+				
+				let id_arg = this.get("Id");
+				this.sandbox.publish("SendTaskID", id_arg, ["msg1"]);
 			},
 			
-			// Прослушивание серверных сообщений
+			/* Прослушивание серверных сообщений */
 			serverListenerMessage: function(scope, message) {
   				if (message && message.Header.Sender === "NegativeRateMessage") {
 					let obj = JSON.parse(message.Body);
-					debugger;
 					if (obj.Id == BPMSoft.SysValue.CURRENT_USER_CONTACT.value &&
 					    obj.TaskId == this.get("Id"))
 						this.BPMSoft.showInformation("Задача " + obj.TaskNumber + " (" + obj.TaskName +
@@ -610,7 +625,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
   				BPMSoft.ServerChannel.un(BPMSoft.EventName.ON_MESSAGE, this.serverListenerMessage, this);
 			},
 			
-			/// Переопределение базового метода, срабатывающего после окончания инициализации схемы объекта страницы записи
+			/* Переопределение базового метода, срабатывающего после окончания инициализации схемы объекта страницы записи */
 			onEntityInitialized: function() {
 				// Вызов родительской реализации метода
 				this.callParent(arguments);
@@ -626,8 +641,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				}
 			},
 			
-			// Проверка статуса задачи: отменен или нет (для кнопки)
-			// Метод изменения атрибута в зависимости от полученного сообщения
+			/* Метод изменения атрибута в зависимости от полученного сообщения */
 			isTaskNotCanceled: function(arg) {
 				if (arg == "862e24d2-9525-42b3-83ef-84866bfc1557" || // если отменена
 				    arg == "7564e99c-34ab-417d-aef7-3c478735eb3d") // если завершен
@@ -636,7 +650,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 					this.set("StatusAttr", true);
             },
 			
-			// обработка события нажатия на кнопку "отмена проекта"
+			/* Обработка события нажатия на кнопку "отмена проекта" */
 			onCancelEventClick: function() {
 				this.showConfirmationDialog("Вы уверены, что хотите отменить задачу?", 
 											function(result) {
@@ -657,9 +671,8 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 											["Yes", "No"]);                
 			},
 			
-			/// метод добавления пользовательских валидаторов
+			/* Метод добавления пользовательских валидаторов */
 			setValidationConfig: function() {
-				// Вызов реализации родительского обработчика
 				this.callParent(arguments);
 				// Добавление обработчика валидации к полю "Стоимость, руб."
 				this.addColumnValidator("EduCost", this.costValidator);
@@ -673,7 +686,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				this.addColumnValidator("EduPlannedStartDate", this.plannedStartDateValidator);
 			},
  
-			/// метод валидации стоимости
+			/* Метод валидации стоимости */
 			costValidator: function(value) {
 				/* Переменная для хранения сообщения об ошибке валидации. */
 				let invalidMessage = "";
@@ -688,7 +701,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				};
 			},
 			
-			/// метод валидации сравнения дат (факт)
+			/* метод валидации сравнения дат (факт) */
 			factDatesCompareValidator: function(value) {
 				// Переменная для хранения сообщения об ошибке валидации
 				let invalidMessage = "";
@@ -704,7 +717,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				};
 			},
 			
-			/// метод валидации дат (план)
+			/* метод валидации дат (план) */
 			plannedDatesCompareValidator: function(value) {
 				// Переменная для хранения сообщения об ошибке валидации
 				let invalidMessage = "";
@@ -720,7 +733,7 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				};
 			},
 			
-			// функция проверки корректности введения даты начала (факт)
+			/* Функция проверки корректности введения даты начала (факт) */
 			factStartDateValidator: function(value) {
 				let invalidMessage = "";
 				let startDate = this.get("EduFactStartDate");
@@ -729,7 +742,8 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 					return { invalidMessage: invalidMessage };
 				startDate.setHours(0,0,0,0);
 				nowDate.setHours(0,0,0,0);
-			    if (startDate.getTime() < nowDate.getTime()) {
+			    if (startDate.getTime() < nowDate.getTime() &&
+				    this.get("EduTaskStatus").value == "8532e0e1-10e7-4ae7-865d-106ce5cdfc15") {
 					invalidMessage = "Дата начала не может быть раньше текущей даты";
 				}
 				return {
@@ -737,14 +751,15 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 				};
 			},
 			
-			// функция проверки корректности введения даты начала (план)
+			/* Функция проверки корректности введения даты начала (план) */
 			plannedStartDateValidator: function(value) {
 				let invalidMessage = "";
 				let startDate = this.get("EduPlannedStartDate");
 				let nowDate = new Date();
 				startDate.setHours(0,0,0,0);
 				nowDate.setHours(0,0,0,0);
-			    if (startDate.getTime() < nowDate.getTime()) {
+			    if (startDate.getTime() < nowDate.getTime() &&
+				    this.get("EduTaskStatus").value == "8532e0e1-10e7-4ae7-865d-106ce5cdfc15") {
 					invalidMessage = "Дата начала не может быть раньше текущей даты";
 				}
 				return {
@@ -753,7 +768,9 @@ define("EduTask1Page", ["ProcessModuleUtilities"], function(ProcessModuleUtiliti
 			}
 
 		},
+		
 		dataModels: /**SCHEMA_DATA_MODELS*/{}/**SCHEMA_DATA_MODELS*/,
+		
 		diff: /**SCHEMA_DIFF*/[
 			{
 				"operation": "insert",
