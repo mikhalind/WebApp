@@ -12,9 +12,9 @@ define("EduService1Page", [], function() {
 					"detailColumn": "EduService"
 				}
 			},
-			"EduSchemaacd564c9Detail7db6f2d5": {
-				"schemaName": "EduSchemaacd564c9Detail",
-				"entitySchemaName": "EduServiceUsers",
+			"EduUsersOfServiceDetail": {
+				"schemaName": "EduUsersOfServiceDetail",
+				"entitySchemaName": "EduUsersOfService",
 				"filter": {
 					"detailColumn": "EduService",
 					"masterColumn": "Id"
@@ -232,13 +232,24 @@ define("EduService1Page", [], function() {
 			},
 			{
 				"operation": "insert",
+				"name": "EduUsersOfServiceDetail",
+				"values": {
+					"itemType": 2,
+					"markerValue": "added-detail"
+				},
+				"parentName": "NotesAndFilesTab",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
 				"name": "Files",
 				"values": {
 					"itemType": 2
 				},
 				"parentName": "NotesAndFilesTab",
 				"propertyName": "items",
-				"index": 0
+				"index": 1
 			},
 			{
 				"operation": "insert",
@@ -252,7 +263,7 @@ define("EduService1Page", [], function() {
 				},
 				"parentName": "NotesAndFilesTab",
 				"propertyName": "items",
-				"index": 1
+				"index": 2
 			},
 			{
 				"operation": "insert",
@@ -281,17 +292,6 @@ define("EduService1Page", [], function() {
 				"parentName": "NotesControlGroup",
 				"propertyName": "items",
 				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "EduSchemaacd564c9Detail7db6f2d5",
-				"values": {
-					"itemType": 2,
-					"markerValue": "added-detail"
-				},
-				"parentName": "NotesAndFilesTab",
-				"propertyName": "items",
-				"index": 2
 			},
 			{
 				"operation": "merge",

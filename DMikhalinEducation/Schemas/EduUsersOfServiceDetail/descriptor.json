@@ -1,8 +1,8 @@
 ﻿{
   "Descriptor": {
-    "UId": "588ed511-663b-4fb1-90da-79dfa9c36fba",
-    "Name": "EduSchemaacd564c9Detail",
-    "ModifiedOnUtc": "\/Date(1731068036000)\/",
+    "UId": "c47d70cf-277e-4e9b-aa22-da3979da7d91",
+    "Name": "EduUsersOfServiceDetail",
+    "ModifiedOnUtc": "\/Date(1731504945000)\/",
     "Parent": {
       "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
       "Name": "BaseGridDetailV2"

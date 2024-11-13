@@ -1,6 +1,6 @@
-define("EduEduServiceUsers698cfa9aPage", [], function() {
+define("EduUsersOfService1Page", [], function() {
 	return {
-		entitySchemaName: "EduServiceUsers",
+		entitySchemaName: "EduUsersOfService",
 		attributes: {},
 		modules: /**SCHEMA_MODULES*/{}/**SCHEMA_MODULES*/,
 		details: /**SCHEMA_DETAILS*/{}/**SCHEMA_DETAILS*/,

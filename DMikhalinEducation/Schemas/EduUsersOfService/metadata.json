@@ -1,10 +1,10 @@
-= MetaData.Schema.UId "bbe738a6-dff1-42a5-9dcd-4406e79cb0aa"
-= MetaData.Schema.A2 "EduServiceUsers"
+= MetaData.Schema.UId "501cbcfc-805a-4015-b668-255aaf83a1a3"
+= MetaData.Schema.A2 "EduUsersOfService"
 = MetaData.Schema.A5 "0837179a-a966-4f43-ae21-7b5d5133b6dc"
 = MetaData.Schema.B6 "d845c3d8-d41f-1793-9383-bcd7d710955b"
 = MetaData.Schema.B8 "1.5.0.902"
-= MetaData.Schema.EG1.UId "5b727148-5661-4d3a-9f3b-90e325767e6b"
-= MetaData.Schema.EG1.A2 "EduEntity_a318c52EventsProcess"
+= MetaData.Schema.EG1.UId "5ce17e5c-475c-4a6a-83d0-96a1ebc123d7"
+= MetaData.Schema.EG1.A2 "EduEntity_a25cc5eEventsProcess"
 = MetaData.Schema.EG1.A5 "0837179a-a966-4f43-ae21-7b5d5133b6dc"
 + MetaData.Schema.EG1.B8 "1.5.0.902"
 = MetaData.Schema.EG1.BK8 "7bb7d6a5-e7a3-4837-83bc-7f785d688165"
@@ -17,33 +17,40 @@
 = MetaData.Schema.EG1.BK4.["f0646c74-f291-474f-9a10-143ee868f1c9"].CK2.["b3d5b61f-7afe-48b5-a8cc-40317ea9c428"].BL7 "53818048-7868-48f6-ada0-0ebaa65af628"
 = MetaData.Schema.EG1.BK4.["8140d7e7-fb91-4999-8347-543345440efb"].CK2.["c803a450-c8dc-47a4-b704-7125c23db317"].BL7 "53818048-7868-48f6-ada0-0ebaa65af628"
 + MetaData.Schema.EG1.Labels []
++ MetaData.Schema.D10 true
 = MetaData.Schema.D8 "1bab9dcf-17d5-49f8-9536-8e0064f1dce0"
++ MetaData.Schema.D29 "null"
++ MetaData.Schema.D30 "null"
++ MetaData.Schema.D31 "null"
 + MetaData.Schema.D2 {
-  "UId": "0e3bdec5-5a5c-9a41-3219-7e3b80b331a1",
-  "A2": "EduService",
-  "A3": "bbe738a6-dff1-42a5-9dcd-4406e79cb0aa",
-  "A4": "bbe738a6-dff1-42a5-9dcd-4406e79cb0aa",
-  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
-  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
-  "S4": "affbfbe8-c9a9-4dfa-9fa1-3c6c67d0d815",
-  "E6": true,
-  "E17": "EduServiceId",
-  "E18": "EduServiceEduName"
-}
-+ MetaData.Schema.D2 {
-  "UId": "2f56ad31-dcb5-89bb-2518-f5fcb47ce106",
+  "UId": "56c53181-3da2-d229-6fda-15aa24ec20e5",
   "A2": "EduUser",
-  "A3": "bbe738a6-dff1-42a5-9dcd-4406e79cb0aa",
-  "A4": "bbe738a6-dff1-42a5-9dcd-4406e79cb0aa",
+  "A3": "501cbcfc-805a-4015-b668-255aaf83a1a3",
+  "A4": "501cbcfc-805a-4015-b668-255aaf83a1a3",
   "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
   "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
   "S4": "16be3651-8fe2-4159-8dd0-a803d4683dd3",
   "E6": true,
+  "E9": true,
   "E17": "EduUserId",
   "E18": "EduUserName"
 }
-~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","0e3bdec5-5a5c-9a41-3219-7e3b80b331a1","2f56ad31-dcb5-89bb-2518-f5fcb47ce106"]
-= MetaData.Schema.D20.A2 "EduServiceUsersEvents"
++ MetaData.Schema.D2 {
+  "UId": "c7fbcf0d-e7a1-3482-ec89-e13c83a583e3",
+  "A2": "EduService",
+  "A3": "501cbcfc-805a-4015-b668-255aaf83a1a3",
+  "A4": "501cbcfc-805a-4015-b668-255aaf83a1a3",
+  "A5": "0837179a-a966-4f43-ae21-7b5d5133b6dc",
+  "S2": "b295071f-7ea9-4e62-8d1a-919bf3732ff2",
+  "S4": "affbfbe8-c9a9-4dfa-9fa1-3c6c67d0d815",
+  "E6": true,
+  "E20": true,
+  "E9": true,
+  "E17": "EduServiceId",
+  "E18": "EduServiceEduName"
+}
+~ MetaData.Schema.D2 ["ae0e45ca-c495-4fe7-a39d-3ab7278e1617","e80190a5-03b2-4095-90f7-a193a960adee","ebf6bb93-8aa6-4a01-900d-c6ea67affe21","9928edec-4272-425a-93bb-48743fee4b04","3015559e-cbc6-406a-88af-07f7930be832","3fabd836-6a53-4d8d-9069-6df88d9dae1e","56c53181-3da2-d229-6fda-15aa24ec20e5","c7fbcf0d-e7a1-3482-ec89-e13c83a583e3"]
+= MetaData.Schema.D20.A2 "EduUsersOfServiceEvents"
 - MetaData.Schema.EG1.B6
 - MetaData.Schema.EG1.BK29
 - MetaData.Schema.EG1.BK30

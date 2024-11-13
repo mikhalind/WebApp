@@ -10,6 +10,7 @@
 			<Item Name="LocalizableStrings.EduSchemaDetailServiceUsers16df4a61DetailCaptionOnPage.Value" Value="Пользователи услуги" />
 			<Item Name="LocalizableStrings.EduSchemaDetailServiceUsersDetailCaptionOnPage.Value" Value="Пользователи услуги" />
 			<Item Name="LocalizableStrings.EduSchemaServiceUsersDetailDetailCaptionOnPage.Value" Value="Пользователи услуги" />
+			<Item Name="LocalizableStrings.EduUsersOfServiceDetailDetailCaptionOnPage.Value" Value="Пользователи услуги" />
 		</Items>
 	</Group>
 </Resources>
